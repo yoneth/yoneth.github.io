@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Djavaweb / Digital Products Built to Solve</title>
+<meta name="description" content="Djavaweb is a web and iOS studio in Surabaya, Indonesia. High-performance websites, native iOS apps, UI/UX, hosting. Since 2018.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+--bg:#0A0A0A;--bg-2:#121212;--bg-3:#1A1A1A;
+--line:#2A2A2A;--line-2:#333;
+--phosphor:#EAEAEA;--phosphor-dim:#A0A0A0;--phosphor-faint:#6B6B6B;
+--red:#E61919;--green:#4AF626;
+--font-display:'Archivo Black',system-ui,sans-serif;
+--font-mono:'JetBrains Mono',ui-monospace,monospace;
+--font-body:'Inter',system-ui,sans-serif;
+--fs-hero:clamp(3.5rem,13vw,15rem);
+--fs-section:clamp(1.7rem,3.4vw,4rem);
+--fs-stat:clamp(2.6rem,6vw,7rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:var(--bg);color:var(--phosphor);font-family:var(--font-body);font-size:clamp(.78rem,.95vw,.95rem);line-height:1.5;overflow-x:hidden}
+body{position:relative;min-height:100vh}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:300;background:repeating-linear-gradient(0deg,transparent 0 2px,rgba(255,255,255,.025) 2px 3px);mix-blend-mode:overlay}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:301;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 .92  0 0 0 0 .92  0 0 0 0 .92  0 0 0 .07 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");opacity:.45;mix-blend-mode:overlay}
+a{color:inherit;text-decoration:none}button{font-family:inherit}
+hr{border:0;height:1px;background:var(--line);width:100%;margin:0}
+hr.red{background:var(--red);height:2px;box-shadow:0 0 8px rgba(230,25,25,.4)}
+img{display:block;max-width:100%}
+.display-hero{font-family:var(--font-display);font-size:var(--fs-hero);line-height:.82;letter-spacing:-.06em;text-transform:uppercase;color:var(--phosphor)}
+.display-section{font-family:var(--font-display);font-size:var(--fs-section);line-height:.92;letter-spacing:-.04em;text-transform:uppercase;color:var(--phosphor)}
+.display-stat{font-family:var(--font-display);font-size:var(--fs-stat);line-height:.85;letter-spacing:-.05em;color:var(--phosphor)}
+.mono-label,.mono-data,.mono-tiny{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.12em}
+.mono-label{font-size:.7rem;color:var(--phosphor)}
+.mono-data{font-size:.68rem;color:var(--phosphor-dim);line-height:1.55;letter-spacing:.1em}
+.mono-tiny{font-size:.6rem;color:var(--phosphor-faint)}
+.red{color:var(--red)}.green{color:var(--green)}
+.glow-green{text-shadow:0 0 8px rgba(74,246,38,.6)}
+.glow-red{text-shadow:0 0 8px rgba(230,25,25,.6)}
+
+.status-strip{position:sticky;top:0;z-index:250;background:var(--bg);border-bottom:1px solid var(--line);padding:8px clamp(1rem,2vw,2rem);display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:var(--phosphor-dim)}
+.status-strip .left,.status-strip .right{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.status-strip .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 8px rgba(74,246,38,.7);animation:blink 1.6s steps(1) infinite}
+.status-strip .sep{color:var(--line-2)}.status-strip strong{color:var(--phosphor);font-weight:500}
+@keyframes blink{0%,60%{opacity:1}61%,100%{opacity:.25}}
+
+.nav-strip{position:sticky;top:31px;z-index:240;background:var(--bg);border-bottom:1px solid var(--line);padding:0 clamp(1rem,2vw,2rem);display:flex;justify-content:space-between;align-items:center;height:62px}
+.nav-strip .brand{font-family:var(--font-display);font-size:1.05rem;letter-spacing:.04em;text-transform:uppercase;color:var(--phosphor)}
+.nav-strip .brand::before{content:'[ '}.nav-strip .brand::after{content:' ]'}
+.nav-strip .nav-links-desk{display:flex;gap:1.4rem}
+.nav-strip .nav-links-desk a{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--phosphor-dim);position:relative;padding-bottom:4px;transition:color .15s}
+.nav-strip .nav-links-desk a:hover{color:var(--phosphor)}
+.nav-strip .nav-links-desk a::after{content:'////';position:absolute;left:0;bottom:-2px;width:0;overflow:hidden;color:var(--red);transition:width .25s;letter-spacing:0}
+.nav-strip .nav-links-desk a:hover::after{width:1.6em}
+.mobile-menu-trigger{display:none;background:transparent;border:1px solid var(--phosphor);padding:6px 12px;cursor:pointer;font-size:.62rem;color:var(--phosphor);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.12em}
+@media (max-width:900px){.nav-strip .nav-links-desk{display:none}.mobile-menu-trigger{display:inline-block}.status-strip .hide-sm{display:none}}
+
+.overlay-menu{position:fixed;inset:0;z-index:500;background:var(--bg);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:1.25rem;padding:4rem clamp(1.5rem,4vw,3rem);transform:translateX(100%);transition:transform .4s cubic-bezier(.7,0,.3,1)}
+.overlay-menu.open{transform:translateX(0)}
+.overlay-menu a{font-family:var(--font-display);font-size:clamp(2rem,7vw,5rem);text-transform:uppercase;color:var(--phosphor);line-height:1}
+.overlay-menu a:hover{color:var(--red)}
+.overlay-menu .overlay-close{position:absolute;top:1.4rem;right:1.4rem;background:transparent;border:1px solid var(--phosphor);color:var(--phosphor);padding:8px 14px;cursor:pointer;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
+
+.hero-zone{position:relative;min-height:clamp(680px,100vh,1100px);padding:clamp(2rem,5vw,5rem) clamp(1.25rem,2.5vw,2.5rem) clamp(3rem,6vw,5rem);display:flex;flex-direction:column;justify-content:space-between;background:radial-gradient(ellipse at top,rgba(230,25,25,.04) 0,transparent 60%)}
+.hero-chrome{display:grid;grid-template-columns:1fr 1fr;gap:1rem;font-family:var(--font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:var(--phosphor-dim);line-height:1.7;padding:1rem 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:clamp(2rem,4vw,3.5rem)}
+.hero-chrome strong{color:var(--phosphor);font-weight:500}
+@media (max-width:600px){.hero-chrome{grid-template-columns:1fr}.hero-chrome .right{text-align:left}}
+
+.hero-headline{margin-bottom:clamp(2rem,4vw,3.5rem)}
+.hero-headline .row{display:block}
+.hero-headline .indent{padding-left:clamp(1.5rem,6vw,5rem)}
+.hero-headline .strike{text-decoration:line-through;text-decoration-color:var(--red);text-decoration-thickness:.08em;color:var(--phosphor-faint)}
+.hero-headline .red-line{position:relative;color:var(--red)}
+.hero-headline .red-line::after{content:'';position:absolute;left:0;right:0;bottom:.04em;height:.18em;background:var(--red);opacity:.18}
+
+.hero-actions{max-width:680px}
+.hero-sub{font-family:var(--font-body);font-size:clamp(.85rem,1.05vw,1rem);line-height:1.65;color:var(--phosphor-dim);margin-bottom:clamp(1.25rem,2.5vw,2rem);max-width:52ch}
+.hero-cta-row{display:flex;gap:.75rem;flex-wrap:wrap}
+.cta-btn-primary,.cta-btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:clamp(13px,1.6vw,17px) clamp(20px,2.6vw,30px);font-family:var(--font-mono);font-weight:700;font-size:clamp(.7rem,1vw,.86rem);letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--phosphor);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.cta-btn-primary{background:var(--phosphor);color:var(--bg)}
+.cta-btn-primary:hover{background:var(--red);color:var(--phosphor);border-color:var(--red)}
+.cta-btn-ghost{background:transparent;color:var(--phosphor)}
+.cta-btn-ghost:hover{background:var(--phosphor);color:var(--bg)}
+
+.telemetry-marquee{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:14px 0;white-space:nowrap}
+.telemetry-track{display:inline-flex;align-items:center;gap:1.2rem;font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;color:var(--phosphor);animation:marquee 60s linear infinite}
+.telemetry-track .sep{color:var(--line-2)}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.section-block{padding:clamp(3.5rem,7vw,6rem) clamp(1.25rem,2.5vw,2.5rem);max-width:1480px;margin:0 auto}
+.section-kicker{display:flex;align-items:center;gap:.75rem;margin-bottom:clamp(1.5rem,3vw,2.5rem);padding-bottom:.75rem;border-bottom:1px solid var(--line)}
+.section-kicker .slashes{color:var(--red);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em}
+.section-kicker .label{color:var(--red)}
+
+.services-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (min-width:768px){.services-grid{grid-template-columns:1fr 1fr}}
+.service-cell{background:var(--bg);padding:clamp(1.5rem,3vw,2.5rem);min-height:320px;display:flex;flex-direction:column;gap:1.25rem;transition:background .2s}
+.service-cell.invert{background:var(--phosphor);color:var(--bg)}
+.service-cell:hover{background:var(--bg-3)}
+.service-cell.invert:hover{background:var(--bg);color:var(--phosphor)}
+.service-topline{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap}
+.service-index{color:var(--red);font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+.service-scope{color:var(--phosphor-faint)}
+.service-cell.invert .service-scope{color:var(--bg-2)}
+.service-title{font-family:var(--font-display);font-size:clamp(1.5rem,2.6vw,2.6rem);line-height:.95;letter-spacing:-.03em;text-transform:uppercase}
+.service-copy{font-family:var(--font-mono);font-size:.68rem;text-transform:none;letter-spacing:.02em;line-height:1.7;color:var(--phosphor-dim);max-width:46ch}
+.service-cell.invert .service-copy{color:var(--bg-2)}
+
+.process-intro{margin-bottom:clamp(2rem,4vw,3rem);max-width:980px}
+.process-kicker{font-family:var(--font-display);font-size:clamp(1.6rem,3.2vw,3.6rem);line-height:.95;letter-spacing:-.04em;text-transform:uppercase;margin-bottom:1rem}
+.process-copy{font-family:var(--font-mono);font-size:.72rem;line-height:1.7;text-transform:none;letter-spacing:.02em;color:var(--phosphor-dim);max-width:72ch}
+.process-board{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (min-width:768px){.process-board{grid-template-columns:1fr 1fr}}
+@media (min-width:1100px){.process-board{grid-template-columns:1fr 1fr 1fr 1fr}}
+.process-cell{background:var(--bg);padding:clamp(1.5rem,2.5vw,2rem);min-height:280px;display:flex;flex-direction:column;justify-content:space-between;gap:1.25rem;transition:background .2s}
+.process-cell.invert{background:var(--phosphor);color:var(--bg)}
+.process-cell:hover{background:var(--bg-3)}
+.process-cell.invert:hover{background:var(--bg);color:var(--phosphor)}
+.process-index{color:var(--red);font-family:var(--font-mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase}
+.process-cell.invert .process-index{color:var(--bg)}
+.process-title{font-family:var(--font-display);font-size:clamp(1.2rem,1.8vw,1.7rem);line-height:.95;letter-spacing:-.02em;text-transform:uppercase}
+.process-tail{display:flex;flex-direction:column;gap:.5rem}
+.process-meta{color:var(--phosphor-faint);font-family:var(--font-mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase}
+.process-cell.invert .process-meta{color:var(--bg-2)}
+.process-cell .process-copy{font-family:var(--font-mono);font-size:.66rem;line-height:1.65;text-transform:none;letter-spacing:.02em;color:var(--phosphor-dim)}
+.process-cell.invert .process-copy{color:var(--bg-2)}
+
+.about-data-row{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:0}
+.about-data-cell{background:var(--bg);padding:clamp(1.25rem,2.5vw,2rem);display:flex;flex-direction:column;gap:.5rem}
+.about-data-cell .city{font-family:var(--font-display);font-size:clamp(2rem,5vw,5.5rem);line-height:.85;letter-spacing:-.05em;text-transform:uppercase;color:var(--phosphor)}
+.about-data-cell .est-num{font-family:var(--font-display);font-size:clamp(2rem,5vw,5.5rem);line-height:.85;letter-spacing:-.05em;color:var(--red)}
+.about-data-cell.right{text-align:right;align-items:flex-end}
+.about-body{font-family:var(--font-mono);font-size:.7rem;line-height:1.75;text-transform:none;letter-spacing:.02em;color:var(--phosphor-dim);max-width:62ch;margin-bottom:1rem;margin-top:1.5rem}
+.about-values{display:grid;grid-template-columns:1fr;gap:1.25rem;margin-top:1.5rem}
+@media (min-width:768px){.about-values{grid-template-columns:1fr 1fr;gap:1.5rem}}
+.about-value{padding:1.25rem;background:var(--bg-2);border-left:3px solid var(--red)}
+.about-value .label{color:var(--red);display:block;margin-bottom:.6rem}
+.about-value p{font-family:var(--font-mono);font-size:.66rem;line-height:1.65;text-transform:none;letter-spacing:.02em;color:var(--phosphor-dim)}
+
+.stat-strip{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+@media (min-width:768px){.stat-strip{grid-template-columns:1fr 1fr 1fr}}
+.stat-cell{background:var(--bg);padding:clamp(2rem,4vw,3.5rem) clamp(1.25rem,2.5vw,2.5rem);display:flex;flex-direction:column;gap:.5rem;position:relative;overflow:hidden}
+.stat-cell::after{content:'';position:absolute;left:0;top:0;width:0;height:2px;background:var(--red);transition:width .6s}
+.stat-cell:hover::after{width:100%}
+.stat-cell .label{color:var(--phosphor);margin-top:.5rem}
+.stat-cell .sub{color:var(--phosphor-faint)}
+
+.works-grid{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.5rem}
+@media (min-width:768px){.works-grid{grid-template-columns:1fr 1fr}}
+.work-card{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bg-3);border:1px solid var(--line)}
+.work-card .media{position:absolute;inset:0;z-index:0}
+.work-card .media img{width:100%;height:100%;object-fit:cover;display:block;filter:contrast(1.18) grayscale(.7) brightness(.55);transition:filter .4s,transform .6s}
+.work-card:hover .media img{filter:contrast(1.05) grayscale(.3) brightness(.75);transform:scale(1.04)}
+.work-card .content{position:absolute;inset:0;z-index:2;padding:clamp(1rem,2vw,1.75rem);display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,rgba(10,10,10,.2) 30%,rgba(10,10,10,.92) 100%)}
+.work-card .work-index{font-size:.62rem;color:var(--phosphor-dim)}
+.work-card .work-title{font-family:var(--font-display);font-size:clamp(1.4rem,2.6vw,2.4rem);line-height:.9;letter-spacing:-.03em;text-transform:uppercase;color:var(--phosphor);transition:color .25s;margin-bottom:.4rem}
+.work-card:hover .work-title{color:var(--red)}
+.work-card .work-meta{font-family:var(--font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;color:var(--phosphor-dim)}
+
+.testimonials-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.5rem}
+@media (min-width:900px){.testimonials-grid{grid-template-columns:1fr 1fr 1fr}}
+.testimonial{background:var(--bg);padding:clamp(1.5rem,3vw,2.5rem);display:flex;flex-direction:column;gap:.75rem}
+.testimonial .t-num{font-family:var(--font-display);font-size:clamp(2rem,3vw,3rem);line-height:1;color:var(--line)}
+.testimonial .quote{font-family:var(--font-body);font-size:clamp(.82rem,1vw,1rem);line-height:1.65;text-transform:none;letter-spacing:.01em;color:var(--phosphor)}
+.testimonial .who{font-family:var(--font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:var(--phosphor);display:block;margin-top:auto}
+.testimonial .tag{font-family:var(--font-mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:var(--red)}
+
+.cta-band{background:var(--red);color:var(--phosphor);padding:clamp(4rem,9vw,7rem) clamp(1.25rem,3vw,3rem);min-height:clamp(520px,72vh,760px);display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.08) 3px 4px);pointer-events:none}
+.cta-kicker{font-family:var(--font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.14em;color:var(--bg);margin-bottom:1rem;display:block;opacity:.85}
+.cta-title{font-family:var(--font-display);font-size:clamp(3rem,12vw,14rem);line-height:.82;letter-spacing:-.06em;text-transform:uppercase;color:var(--phosphor);max-width:11ch;margin-bottom:clamp(1.5rem,3vw,2.5rem)}
+.cta-title .invert{color:var(--bg);display:block}
+.cta-band .cta-btn{display:inline-flex;align-items:center;gap:10px;padding:clamp(14px,1.6vw,18px) clamp(20px,2.6vw,32px);background:var(--bg);color:var(--phosphor);font-family:var(--font-mono);font-weight:700;font-size:clamp(.7rem,1vw,.88rem);letter-spacing:.12em;text-transform:uppercase;border:none;cursor:pointer;transition:background .15s,color .15s;width:max-content}
+.cta-band .cta-btn:hover{background:var(--phosphor);color:var(--bg)}
+.cta-foot{margin-top:clamp(1.5rem,3vw,2.5rem);display:flex;gap:1.5rem;flex-wrap:wrap;font-family:var(--font-mono);font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(10,10,10,.7)}
+
+.footer-spec{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border-top:1px solid var(--line)}
+@media (min-width:768px){.footer-spec{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+.footer-spec>*{background:var(--bg);padding:clamp(1.25rem,2.5vw,2rem)}
+.footer-brand{font-family:var(--font-display);font-size:clamp(1.4rem,2.4vw,2.4rem);line-height:.9;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:.5rem}
+.footer-spec h5{font-family:var(--font-mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.14em;color:var(--red);margin-bottom:.75rem}
+.footer-spec a{display:block;font-family:var(--font-mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:var(--phosphor);margin-bottom:.4rem;transition:color .15s}
+.footer-spec a:hover{color:var(--red)}
+.barcode{display:flex;gap:1.5px;height:22px;align-items:stretch;margin-top:.75rem}
+.barcode span{background:var(--phosphor);display:block}
+.barcode span.dim{background:var(--line)}
+.footer-meta{padding:1rem clamp(1.25rem,2.5vw,2rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;font-family:var(--font-mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:var(--phosphor-faint);border-top:1px solid var(--line)}
+
+.scroll-progress{position:fixed;top:0;left:0;z-index:400;width:100%;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left center;pointer-events:none;box-shadow:0 0 8px rgba(230,25,25,.6)}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--line)}
+::-webkit-scrollbar-thumb:hover{background:var(--red)}
+
+@media (prefers-reduced-motion:reduce){
+body::before,body::after{display:none}
+.telemetry-track{animation:none}
+.status-strip .dot{animation:none}
+.reveal-copy,.reveal-block,.reveal-row,.reveal-panel,.split-word,.motion-line{opacity:1!important;transform:none!important}
+}
+.reveal-copy,.reveal-block,.reveal-row,.reveal-panel,.split-word,.motion-line{will-change:transform,opacity}
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<div class="status-strip">
+  <div class="left">
+    <span><span class="dot"></span>&nbsp;<strong>SYS&nbsp;ONLINE</strong></span>
+    <span class="sep">|</span>
+    <span class="hide-sm">UNIT / DW-001</span>
+    <span class="sep hide-sm">|</span>
+    <span class="hide-sm">LAT -7.2575  LON 112.7521</span>
+  </div>
+  <div class="right">
+    <span class="hide-sm">SESSION 4.0</span>
+    <span class="sep hide-sm">|</span>
+    <span id="status-clock">WIB 00:00:00</span>
+  </div>
+</div>
+
+<div id="overlay" class="overlay-menu">
+  <button onclick="toggleMenu()" class="overlay-close">[ CLOSE ]</button>
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#process" onclick="toggleMenu()">Process</a>
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#works" onclick="toggleMenu()">Works</a>
+  <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<nav class="nav-strip">
+  <a href="#top" class="brand">Djavaweb</a>
+  <div class="nav-links-desk">
+    <a href="#services">Services</a>
+    <a href="#process">Process</a>
+    <a href="#about">About</a>
+    <a href="#works">Works</a>
+    <a href="#testimonials">Testimonials</a>
+  </div>
+  <button onclick="toggleMenu()" class="mobile-menu-trigger">[ MENU ]</button>
+</nav>
+
+<section class="hero-zone" id="top">
+  <div class="hero-chrome reveal-copy">
+    <div class="left">
+      <span class="red">////</span> <strong>DJAVAWEB / DW-001</strong><br>
+      SURABAYA, ID &nbsp; <span class="green glow-green">● LIVE</span><br>
+      EST. 2018 &nbsp; BUILD 4.0
+    </div>
+    <div class="right">
+      <strong>SCOPE</strong> WEB / iOS / DESIGN<br>
+      <strong>STATUS</strong> ACCEPTING PROJECTS<br>
+      <span class="red">NEXT SLOT</span> Q3 / 2026
+    </div>
+  </div>
+
+  <h1 class="display-hero hero-headline">
+    <span class="row">DIGITAL</span>
+    <span class="row strike">PRODUCTS</span>
+    <span class="row indent">BUILT TO <span class="red-line">SOLVE</span></span>
+  </h1>
+
+  <div class="hero-actions">
+    <p class="hero-sub">We design and build digital products, from high-performance websites to production-ready iOS applications. Web and iOS studio, Surabaya, Indonesia, since 2018.</p>
+    <div class="hero-cta-row">
+      <a href="#contact" class="cta-btn-primary">&gt;&gt;&gt; START A PROJECT</a>
+      <a href="#works" class="cta-btn-ghost">SEE WORK</a>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<div class="telemetry-marquee" aria-hidden="true">
+  <div class="telemetry-track">
+    <span class="green glow-green">● ONLINE</span><span class="sep">///</span>
+    <span>SURABAYA -7.2575 / 112.7521</span><span class="sep">///</span>
+    <span>UNIT DW-001</span><span class="sep">///</span>
+    <span>PROJECTS 50+</span><span class="sep">///</span>
+    <span class="red">ACCEPTING Q3 2026</span><span class="sep">///</span>
+    <span>iOS NATIVE</span><span class="sep">///</span>
+    <span>WEB PERFORMANCE</span><span class="sep">///</span>
+    <span>UI/UX RESEARCH</span><span class="sep">///</span>
+    <span>STACK SWIFT / LARAVEL / NEXT</span><span class="sep">///</span>
+    <span>HELLO@DJAVAWEB.COM</span><span class="sep">///</span>
+    <span class="green glow-green">● ONLINE</span><span class="sep">///</span>
+    <span>SURABAYA -7.2575 / 112.7521</span><span class="sep">///</span>
+    <span>UNIT DW-001</span><span class="sep">///</span>
+    <span>PROJECTS 50+</span><span class="sep">///</span>
+    <span class="red">ACCEPTING Q3 2026</span><span class="sep">///</span>
+    <span>iOS NATIVE</span><span class="sep">///</span>
+    <span>WEB PERFORMANCE</span><span class="sep">///</span>
+    <span>UI/UX RESEARCH</span><span class="sep">///</span>
+    <span>STACK SWIFT / LARAVEL / NEXT</span><span class="sep">///</span>
+    <span>HELLO@DJAVAWEB.COM</span><span class="sep">///</span>
+  </div>
+</div>
+
+<section id="services" class="section-block">
+  <div class="section-kicker"><span class="slashes">////</span><span class="label">DIVERSE CAPABILITIES</span></div>
+  <div class="services-grid">
+    <article class="service-cell invert">
+      <div class="service-topline"><span class="service-index">[ 01 ]</span><span class="service-scope mono-data">WEB / STRATEGY / PERFORMANCE</span></div>
+      <h3 class="service-title">CORPORATE WEB DEVELOPMENT</h3>
+      <p class="service-copy">High-performance landing pages and business websites built to clarify positioning, sharpen conversion, and make your offer feel impossible to ignore.</p>
+    </article>
+    <article class="service-cell">
+      <div class="service-topline"><span class="service-index">[ 02 ]</span><span class="service-scope mono-data">SWIFT / SWIFTUI / NATIVE iOS</span></div>
+      <h3 class="service-title">iOS APP DEVELOPMENT</h3>
+      <p class="service-copy">Native iOS applications designed around real workflows, stable architecture, fast interaction, and production readiness from the first build.</p>
+    </article>
+    <article class="service-cell">
+      <div class="service-topline"><span class="service-index">[ 03 ]</span><span class="service-scope mono-data">RESEARCH / INTERFACE / SYSTEM</span></div>
+      <h3 class="service-title">UI/UX SERVICES</h3>
+      <p class="service-copy"> the product easier to understand, easier to use, and easier to trust before development begins.</p>
+    </article>
+    <article class="service-cell invert">
+      <div class="service-topline"><span class="service-index">[ 04 ]</span><span class="service-scope mono-data">HOSTING / CARE / OPERATIONS</span></div>
+      <h3 class="service-title">WEBSITE HOSTING &amp; MANAGEMENT</h3>
+      <p class="service-copy">Managed website operations for teams that want fewer technical interruptions, cleaner maintenance, and reliable day-to-day performance.</p>
+    </article>
+  </div>
+</section>
+
+<hr class="red">
+
+<section id="process" class="section-block">
+  <div class="section-kicker"><span class="slashes">////</span><span class="label">PRODUCT DEVELOPMENT PROCESS</span></div>
+  <div class="process-intro">
+    <h2 class="process-kicker">FROM PROBLEM TO SHIPPED PRODUCT</h2>
+    <p class="process-copy">Every project starts with clarity. We align goals, scope, constraints, and production realities before design begins, so the final website or native iOS application is built with direction instead of guesswork.</p>
+  </div>
+  <div class="process-board">
+    <article class="process-cell">
+      <span class="process-index">[ 01 ] DEFINE</span>
+      <h4 class="process-title">DEFINING GOAL</h4>
+      <div class="process-tail">
+        <span class="process-meta">Project Definition</span>
+        <p class="process-copy">We isolate the real business problem, target users, core features, technical constraints, and success metrics before anything gets designed.</p>
+      </div>
+    </article>
+    <article class="process-cell invert">
+      <span class="process-index">[ 02 ] STRUCTURE</span>
+      <h4 class="process-title">WIREFRAMING</h4>
+      <div class="process-tail">
+        <span class="process-meta">Flows / Screens / Architecture</span>
+        <p class="process-copy">Ideas become structured user flows, screen hierarchy, and interaction patterns that make the product feel understandable before the visual layer is applied.</p>
+      </div>
+    </article>
+    <article class="process-cell">
+      <span class="process-index">[ 03 ] SYSTEMIZE</span>
+      <h4 class="process-title">VISUAL DESIGN</h4>
+      <div class="process-tail">
+        <span class="process-meta">Interface / Brand / Accessibility</span>
+        <p class="process-copy">We shape the interface system, typography, spacing, and responsive behavior so the product feels polished, native, and ready for implementation.</p>
+      </div>
+    </article>
+    <article class="process-cell invert">
+      <span class="process-index">[ 04 ] BUILD</span>
+      <h4 class="process-title">APP DEVELOPMENT</h4>
+      <div class="process-tail">
+        <span class="process-meta">Implementation / QA / Release</span>
+        <p class="process-copy">Development moves into clean architecture, API integration, performance checks, responsive QA, and release preparation for web or App Store delivery.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<hr>
+
+<section id="about" class="section-block" style="padding-top:0">
+  <div class="about-data-row">
+    <div class="about-data-cell">
+      <span class="mono-data" style="color:var(--red)">UNIT / DW-001</span>
+      <div class="city">SURABAYA</div>
+      <span class="mono-data">INDONESIA  /  JAVA ISLAND</span>
+    </div>
+    <div class="about-data-cell right">
+      <span class="mono-data" style="color:var(--red)">EST.</span>
+      <div class="est-num">2018</div>
+      <span class="mono-tiny">OPERATIONAL  /  8+ YEARS</span>
+    </div>
+  </div>
+  <div class="section-kicker" style="margin-top:clamp(2rem,4vw,3rem)"><span class="slashes">////</span><span class="label">ABOUT THE STUDIO</span></div>
+  <h2 class="display-section">AT DJAVAWEB WE ARE ALL ABOUT YOU, SO YOU CAN BE ABOUT YOUR BUSINESS</h2>
+  <p class="about-body">Located in Surabaya, Indonesia, Djavaweb is a full-service web design agency that provides top-quality services to customers near and far. Since our inception, we have created bold and vibrant websites along with customized solutions for businesses. Now, we would like to do the same for you.</p>
+  <p class="about-body">No matter your business needs, Djavaweb's experienced professionals will not let you down.</p>
+  <div class="about-values">
+    <div class="about-value">
+      <span class="label mono-data">+ RESEARCH &amp; DISCOVERY</span>
+      <p>We help clients understand the space around new products, to find a unique niche and underserved market.</p>
+    </div>
+    <div class="about-value">
+      <span class="label mono-data">+ CREATIVE DIRECTION</span>
+      <p>We can help kickstart and drive vision on how customers use and experience your product, and how that product fits into the brand and story of your company.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stat-strip">
+  <div class="stat-cell">
+    <div class="display-stat js-stat" data-target="2" data-prefix="$" data-suffix="M+">$0M+</div>
+    <span class="mono-data label">DIGITAL PRODUCTS DELIVERED</span>
+    <span class="mono-tiny sub">web &amp; mobile platforms</span>
+  </div>
+  <div class="stat-cell">
+    <div class="display-stat js-stat" data-target="50" data-suffix="+">0+</div>
+    <span class="mono-data label">CUSTOMERS WORLDWIDE</span>
+    <span class="mono-tiny sub">digital products &amp; services</span>
+  </div>
+  <div class="stat-cell">
+    <div class="display-stat js-stat" data-target="8" data-suffix="+">0+</div>
+    <span class="mono-data label">YEARS EXPERIENCE</span>
+    <span class="mono-tiny sub">web &amp; iOS development</span>
+  </div>
+</section>
+
+<section id="works" class="section-block">
+  <div class="section-kicker"><span class="slashes">////</span><span class="label">SELECTED WORK</span></div>
+  <h2 class="display-section" style="margin-bottom:clamp(1.5rem,3vw,2.5rem)">OUR WORKS</h2>
+  <div class="works-grid">
+    <article class="work-card">
+      <div class="media"><img src="https://picsum.photos/seed/djavaweb-ios-fintech/1200/900" alt="iOS FinTech app preview" loading="lazy"></div>
+      <div class="content">
+        <span class="work-index mono-data">[ 01 ]</span>
+        <div>
+          <div class="work-title">iOS APP</div>
+          <span class="work-meta mono-data">FinTech Portfolio App  /  Native Swift</span>
+        </div>
+      </div>
+    </article>
+    <article class="work-card">
+      <div class="media"><img src="https://picsum.photos/seed/djavaweb-web-corporate/1200/900" alt="Corporate landing page preview" loading="lazy"></div>
+      <div class="content">
+        <span class="work-index mono-data">[ 02 ]</span>
+        <div>
+          <div class="work-title">WEB DEV</div>
+          <span class="work-meta mono-data">Corporate Landing Page  /  Performance First</span>
+        </div>
+      </div>
+    </article>
+    <article class="work-card">
+      <div class="media"><img src="https://picsum.photos/seed/djavaweb-uiux-ecommerce/1200/900" alt="E-commerce UI/UX preview" loading="lazy"></div>
+      <div class="content">
+        <span class="work-index mono-data">[ 03 ]</span>
+        <div>
+          <div class="work-title">UI/UX</div>
+          <span class="work-meta mono-data">E-Commerce Redesign  /  Research + System</span>
+        </div>
+      </div>
+    </article>
+    <article class="work-card">
+      <div class="media"><img src="https://picsum.photos/seed/djavaweb-saas-dashboard/1200/900" alt="SaaS dashboard preview" loading="lazy"></div>
+      <div class="content">
+        <span class="work-index mono-data">[ 04 ]</span>
+        <div>
+          <div class="work-title">CMS / SAAS</div>
+          <span class="work-meta mono-data">SaaS Dashboard Platform  /  Full Stack</span>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="testimonials" class="section-block">
+  <div class="section-kicker"><span class="slashes">////</span><span class="label">CLIENT SIGNAL</span></div>
+  <h2 class="display-section" style="margin-bottom:clamp(1.5rem,3vw,2.5rem)">WHAT OUR CLIENTS SAY</h2>
+  <div class="testimonials-grid">
+    <article class="testimonial">
+      <div class="t-num">01</div>
+      <p class="quote">Djavaweb delivered our corporate website on schedule and the result exceeded our expectations. Clean design, fast, and the team was a pleasure to work with from kickoff to launch.</p>
+      <span class="who">ANITA  /  OPERATIONS DIRECTOR</span>
+      <span class="tag">CORPORATE SITE  /  2024</span>
+    </article>
+    <article class="testimonial">
+      <div class="t-num">02</div>
+      <p class="quote">Their iOS work is excellent. The native app is fast, stable, and our users love the new interface. Communication was clear, the architecture was solid, and the release went smoothly.</p>
+      <span class="who">BUDI  /  PRODUCT LEAD</span>
+      <span class="tag">iOS APP  /  2024</span>
+    </article>
+    <article class="testimonial">
+      <div class="t-num">03</div>
+      <p class="quote">The UI/UX research was thorough and the new design system feels coherent across every screen. Our conversion rate improved and the team really understood our customers.</p>
+      <span class="who">CITRA  /  MARKETING HEAD</span>
+      <span class="tag">UI/UX REDESIGN  /  2025</span>
+    </article>
+  </div>
+</section>
+
+<section id="contact" class="cta-band">
+  <span class="cta-kicker">//// CONTACT  /  READY TO SHIP</span>
+  <h2 class="cta-title">LET'S<br>BUILD<br><span class="invert">SOMETHING</span></h2>
+  <p class="mono-data" style="text-transform:none;letter-spacing:.02em;line-height:1.65;max-width:48ch;margin-bottom:1.5rem;color:rgba(234,234,234,.88)">Reach out with a brief, a goal, or even a half-formed idea. We will respond with a clear plan, a realistic timeline, and a path to launch.</p>
+  <a href="mailto:hello@djavaweb.com" class="cta-btn">&gt;&gt;&gt; HELLO@DJAVAWEB.COM</a>
+  <div class="cta-foot">
+    <span>REPLY &lt; 24H</span><span>·</span><span>EN / ID</span><span>·</span><span>SURABAYA  /  REMOTE</span>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-spec">
+    <div>
+      <div class="footer-brand">Djavaweb</div>
+      <span class="mono-data" style="color:var(--phosphor-dim)">Web &amp; iOS studio. Surabaya, ID. Since 2018.</span>
+      <div class="barcode" aria-hidden="true">
+        <span style="width:3px"></span><span class="dim" style="width:1px"></span><span style="width:2px"></span><span class="dim" style="width:1px"></span><span style="width:4px"></span><span class="dim" style="width:1px"></span><span style="width:2px"></span><span class="dim" style="width:1px"></span><span style="width:3px"></span><span class="dim" style="width:1px"></span><span style="width:1px"></span><span class="dim" style="width:1px"></span><span style="width:2px"></span><span class="dim" style="width:1px"></span><span style="width:4px"></span><span class="dim" style="width:1px"></span><span style="width:2px"></span><span class="dim" style="width:1px"></span><span style="width:3px"></span><span class="dim" style="width:1px"></span><span style="width:2px"></span><span class="dim" style="width:1px"></span><span style="width:4px"></span><span class="dim" style="width:1px"></span><span style="width:1px"></span><span class="dim" style="width:1px"></span><span style="width:3px"></span><span class="dim" style="width:1px"></span>
+      </div>
+    </div>
+    <div>
+      <h5>NAV</h5>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+    </div>
+    <div>
+      <h5>SOCIAL</h5>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Dribbble</a>
+      <a href="#">GitHub</a>
+    </div>
+    <div>
+      <h5>CONTACT</h5>
+      <a href="mailto:hello@djavaweb.com">hello@djavaweb.com</a>
+      <a href="#">+62 31 0000 0000</a>
+      <span class="mono-tiny" style="display:block;margin-top:.6rem">Surabaya, Indonesia<br>GMT +7 (WIB)</span>
+    </div>
+  </div>
+  <div class="footer-meta">
+    <div class="left">
+      <span>&copy; 2018&ndash;2026 DJAVAWEB</span>
+      <span>&middot;</span>
+      <span>ALL RIGHTS RESERVED</span>
+    </div>
+    <div>
+      <span>BUILD 4.0  /  CRT TERMINAL</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var el=document.getElementById('status-clock');
+  function tick(){
+    var d=new Date();
+    var h=String(d.getHours()).padStart(2,'0');
+    var m=String(d.getMinutes()).padStart(2,'0');
+    var s=String(d.getSeconds()).padStart(2,'0');
+    if(el) el.textContent='WIB '+h+':'+m+':'+s;
+  }
+  tick(); setInterval(tick,1000);
+})();
+function toggleMenu(){
+  var o=document.getElementById('overlay');
+  if(o) o.classList.toggle('open');
+}
+(function(){
+  var p=document.querySelector('.scroll-progress');
+  function u(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    var r=max>0?(h.scrollTop/max):0;
+    if(p) p.style.transform='scaleX('+r+')';
+  }
+  window.addEventListener('scroll',u,{passive:true});
+  window.addEventListener('resize',u);
+  u();
+})();
+(function(){
+  var stats=document.querySelectorAll('.js-stat');
+  if(!stats.length || !('IntersectionObserver' in window)){
+    stats.forEach(function(s){s.textContent=(s.dataset.prefix||'')+s.dataset.target+(s.dataset.suffix||'');});
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target;
+      var target=parseFloat(el.dataset.target)||0;
+      var prefix=el.dataset.prefix||'';
+      var suffix=el.dataset.suffix||'';
+      var t0=performance.now();
+      var dur=1200;
+      function step(t){
+        var k=Math.min(1,(t-t0)/dur);
+        var v=Math.floor(target*(1-Math.pow(1-k,3)));
+        el.textContent=prefix+v+suffix;
+        if(k<1) requestAnimationFrame(step);
+        else el.textContent=prefix+target+suffix;
+      }
+      requestAnimationFrame(step);
+      io.unobserve(el);
+    });
+  },{threshold:.4});
+  stats.forEach(function(s){io.observe(s);});
+})();
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target;
+      el.style.transition='transform .9s cubic-bezier(.2,.7,.2,1), opacity .9s ease';
+      el.style.transform='translateY(0)';
+      el.style.opacity=1;
+      io.unobserve(el);
+    });
+  },{threshold:.15, rootMargin:'0px 0px -10% 0px'});
+  document.querySelectorAll('.reveal-copy').forEach(function(el){
+    el.style.opacity=0;
+    el.style.transform='translateY(28px)';
+    io.observe(el);
+  });
+  var heroRows=document.querySelectorAll('.hero-headline .row');
+  heroRows.forEach(function(r,i){
+    r.style.opacity=0;
+    r.style.transform='translateY(120%)';
+    r.style.transition='transform 1s cubic-bezier(.2,.7,.2,1), opacity .8s ease';
+    setTimeout(function(){
+      r.style.opacity=1;
+      r.style.transform='translateY(0)';
+    }, 120 + i*140);
+  });
+  var works=document.querySelectorAll('.work-card');
+  var wio=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      works.forEach(function(c,i){
+        c.style.transition='none';
+        c.style.opacity=0;
+        c.style.transform='translateY(40px) scale(.98)';
+        setTimeout(function(){
+          c.style.transition='transform .8s cubic-bezier(.2,.7,.2,1), opacity .8s ease';
+          c.style.opacity=1;
+          c.style.transform='translateY(0) scale(1)';
+        }, 80 + i*120);
+      });
+      wio.disconnect();
+    });
+  },{threshold:.1});
+  if(works.length) wio.observe(works[0]);
+})();
+</script>
+</body>
+</html>
