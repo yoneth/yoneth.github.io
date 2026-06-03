@@ -1,336 +1,1321 @@
-#2. First Steps
-
-###2.1 Upload your logo image
-
-You can upload your logo image in the Billio Theme Options. If the logo is not uploaded, then Billio logo will be used.
-
-Billio 
-
-Please, follow the steps below to upload your logo:
-
-Step 1 - Login to your WordPress Dashboard.
-
-Step 2 - Go to Appearance > Theme Options > Main Navigation. Billio has distinct feature that allow you to upload different logo images between homepage and the rest of all pages.  And if your **Sticky Menu** option is active, you are able to set two different logo images, which will be set on default navigation bar and sticky navigation bar.
-
-Step 3 - Upload your logo in any size
-
-*To implement retina logo, please upload your logo resolution exactly double the size you are going to set under **Logo Width** setting*
-
-___
-
-###2.2 Change Post & Custom Post Layout
-
-Billio comes with three layouts: Full, Left Sidebar and Right Sidebar.
-
-Please, follow the steps below to find out how to change your layout:
-
-Step 1 - Login to your WordPress Dashboard.
-
-Step 2 - Go to Appearance > Theme Options > General > General Settings. You will see Main Layout as WP default post, with other type of posts : Recruitments Layout, Reports Layout, WooCommerce, Contact Forms Layout and all other posts that are installed in your WordPress website.
-
-Step 3 - Choose between Full, Left Sidebar and Right Sidebar.
-
-Step 4 - Don't forget to save the changes.
-
-___
-
-###2.3 Mega Menu Setup
-
-The mega menus are available only for top level navigations items only in "Main Menu" area.
-
-Follow the steps below to create a mega menu:
-
-Step 1 - Make sure that **Mega Menu Elements, CSS Classes and Description** option is checked in the **Screen Options** under "Show advanced menu properties" while you are in **Appearance > Menus** page in your WordPress Dasboard.
-![Screen Options](http://i.imgur.com/ormhwmX.png)
-
-Step 2 - Now, add a an item to the menu editor. **This has to be a top level item!**
-
-Step 3 - Click on arrow icon in the top right-hand and expand. Tick **Activate Mega Menu Dropdown for this item** checkbox.
-![Activate Mega Menu](http://i.imgur.com/zNJak9Y.png)
-
-Step 4 - Click **Add Column**
-![Add Column](http://i.imgur.com/Wv4pqoz.png)
-
-Step 5 - Drag it right below mega menu item and then indent it
-![Indent Column](http://i.imgur.com/JL6d7Fe.png)
-
-Step 6 - Specify column width by specifying a css class, in example `col-sm-4` to display 4/12 ( or 1/3 ) width.
-![Column Width](http://i.imgur.com/uNYFK66.png)
-
-Step 6 - Now, you need to add child menu items, which should be indented under **Mega Menu Column** as shown on the image below
-![Child Menu Items](http://i.imgur.com/rmFRWr8.png)
-
-- Step 7 - To add Heading/ Title, click Add Heading Item in Mega Menu Elements and arrange it in the first order.
-![Heading Item](http://i.imgur.com/iXcaCfu.png)
-
-Step 6 - Your dropdown should now look something like this :
-![Dropdown Mega Menu](http://i.imgur.com/ZcTpZ8p.png)
-
-
-There are several additional classes available for the mega menu. Simply add them next to the 'megamenu' class separated by one single space.
-
-col-sm-3 - 1/4 column width
-col-sm-4 - 1/3 column width
-col-sm-6 - 1/2 column width
-col-sm-8 - 2/3 column width
-
-
-####2.4 Icons in Top Bar
-
-Follow the steps below to create an icon menu:
-
-Step 1 - First, select your Icon from DT Icon shortcode, by creating new blank page. Click on DT Shortcode button
-
-![DT Shortcode](http://i.imgur.com/UKsdhuY.png )
-
-Step 2 - Browse the icon and select an icon by clicking on it. Icon class name will be displayed on top of icon picker. Copy the icon class name.
-![Browse Icon](http://i.imgur.com/sMX2c27.png)
-
-Step 3 - Navigate to **Appearance > Menus** then  enable **CSS Classes** from **Screen Options** panel ( at the top of Menus page ) by ticking it. 
-
-Step 4 - Create **Links** type menu, enter *URL* and *Link Text*
-
-Step 5 - Enter icon-name copied before in step 2 ; in example **icon-social-android8** ( without quotes ) into CSS Classes field. 
-
-Step 6 - Navigate to **Theme Options > Top Bar Settings > Select Left or Right Section > Type Of Element**, select **Icon from Menu**.
-
-
-___
-
-###2.5 Create Posts
-
-There are eight custom post types in Billio theme.
-Standard, Gallery, Image, Quote, Video, Audio, Link and Aside.
-
-Adding Posts
-
-Step 1 - Log in to your WordPress Administration Panel (Dashboard)..
-
-Step 2 - Click the 'Posts' tab.
-
-Step 3 - Click the 'Add New' sub-tab.
-
-Step 4 - Start filling in the blanks: enter your post title in the upper field, and enter your post body content in the main post editing box below it.
-
-Step 5 - As needed, select a category, add tags, fill in the meta setings below the editor.
-
-Step 6 - Select post format on the right hand side and fill in the meta settings below the editor.
-
-Step 7 - It is important to upload a featured image for your post.
-
-####Showing Posts
-
-Simply create a new page, name it as **Blog**, then make sure that you also set the **Posts Page** to Blog under **Appearance > Settings > Readings**.
-
-![Reading Settings](http://i.imgur.com/L8sQubz.png)
-
-___
-
-###2.6 Add Service Items
-
-BIllio has inbuilt support for Service Custom Post Type. Use it to showcase your services.
-
-Add Service Items
-
-Step 1 - Log in to your WordPress Administration Panel (Dashboard).
-
-Step 2 - Click the _Services_ tab.
-
-Step 3 - Click the _Add New_ sub-tab.
-
-Step 4 - Start filling in the blanks: enter your Service title in the upper field.
-
-Step 5 - Make sure you have Backend Editor mode selected. If you have not, you will see **Backend Editor** button appear under Page Title, then click it.
-
-![Backend Editor](http://i.imgur.com/1w34L6u.png)
-
-Step 6 - Click on Templates icon
-
-![Templates](http://i.imgur.com/QQeoRnp.png)
-
-Step 5 - Select **Service Layout**. It might take a while for your machine to render the layout. Please wait and do no interrupt the process.
-
-Step 6 - Once the layout is loaded. Simply replace texts, titles, and images with your own content.
-
-####2.6.1 Showing Services Item
-
-If you have imported 1-Click Demo Import, **All Services** page will be automatically set. If you did not import it, please follow these steps below :
-
-Step 1 - You need to use Essential Grid Plugin in order to list your Service posts. Make sure Essential Grid plugin is installed and activated.
-
-Step 2 - Go to to **Dashboard > Ess. Grid > Import / Export**. Click on **Import** , choose Essential Grid demo file under **Demo Content/Essential Grid**, pick one file based on the theme you are working on, then click Import.
-
-Step 3 - Navigate to **Dashboard > Ess. Grid** , click on the Settings ( green button ) for **All Services**.
-
-Step 4 - Click **Source** tab, select **Post Types** to **Service** and specify **Post Categories**. Leave other settings as is.
-
-Step 5 - Click **Save Grid** green button at top right of the browser window.
-
-Step 6 - Create a new page, select Visual Composer Template named **All Services Layout**. 
-
-Step 7 - Add Visual Composer element named **Essential Grid** to the page.
-
-Step 8 - Choose grid to **All Services** , then hit **Add Selected Grid**.
-
-Step 9 - Publish the page.
-___
-
-###2.7 Project / Equipment Posts
-
-Both **Project** and **Equipment** posts use Essential Grid Custom Type Post. To access Essential Grid Posts, navigate to this following url : [your_domain/wp-admin/edit.php?post_type=essential_grid](your_domain/wp-admin/edit.php?post_type=essential_grid). 
-
-We have modified Essential Grid Custom Type Post to allow user to change its name and its permalink. Go to **Settings** sub tab to configure them.
-
-####2.7.1 Add Project / Equipment items gallery
-
-Please, follow the steps below to add project / equipment items
-
-Step 1 - Navigate to this following url : [your_domain/wp-admin/edit.php?post_type=essential_grid](your_domain/wp-admin/edit.php?post_type=essential_grid) then click 'Add New' sub tab.
-
-Step 2 - Enter your Project / Equipment title in the upper field.
-
-Step 3 - Make sure you have Backend Editor mode selected. If you have not, you will see **Backend Editor** button appear under Page Title, then click it.
-
-![Backend Editor](http://i.imgur.com/1w34L6u.png)
-
-Step 4 - Click on Templates icon
-
-![Templates](http://i.imgur.com/QQeoRnp.png)
-
-Step 5 - Select **Project Layout ( or Equipment Layout )**. It might take a while for your machine to render the layout. Please wait and do no interrupt the process.
-
-Step 6 - Once the layout is loaded. Simply replace texts, titles, and images with your own content.
-
-####2.7.2 Showing Project / Equipment items gallery
-
-If you have imported 1-Click Demo Import, **All Services** page will be automatically set. If you did not import it, please follow these steps below :
-
-Step 1 - You need to use Essential Grid Plugin in order to list your Service posts. Make sure Essential Grid plugin is installed and activated.
-
-Step 2 - Go to to **Dashboard > Ess. Grid > Import / Export**. Click on **Import** , choose the Essential Grid demo file under **Demo Content/Essential Grid**, pick one file based on the theme you are working on, then click Import.
-
-Step 3 - Navigate to **Dashboard > Ess. Grid** , click on the Settings ( green button ) for **Projects ( or Equipment)**.
-
-Step 4 - Click **Source** tab, select **Post Types** to **Services ( or any name Post Types** and specify the **Post Categories**. Leave other settings as is.
-
-Step 5 - Click **Save Grid** green button at top right of the browser window.
-
-Step 6 - Choose your grid , then hit **Add Selected Grid**.
-
-Step 9 - Publish the page.
-
-___
-
-###2.8 Add Recruitment Post
-Billio comes with DT Recruitment plugin. This plugin is used to handle simple recruitment/vacancy information on website.
-
-####2.8.1 Simple Recruitment Theme Options
-After DT Recruitment plugin installed, you will have additional tab named **Simple Recruitment ** on **Theme Options**. Please visit **Appearance > Theme Options > Simple Recruitment ** on Wordpress Dashboard.
-
-![Add Recruitment Post](http://i.imgur.com/EdOhz7U.jpg)
-
-Step 1 - Set **Job Description Fields**. These custom fields will appear on Recruitment Custom Post.
-
-Step 2 - Set **Email Address**. This email address will be used as target email when visitors submit their application forms. If you using multiple email addresses separate them with comma. Leave it email address blank if you want to use 
-
-site's admin email as target email.
-
-Step 3 - Check **Attachment Type**. Select the file type allowed to attach in the application form.
-
-Step 4 - Set **Attachment Size**. Set the maximum attachment file size allowed to attach in the application form in KiloByte.
-
-Step 5 - Set **Application Form Heading Text**. This heading text will appear on application Form.
-
-Step 6 - Set **Email to Friend Form Heading Text**. This heading text will appear "Email to Friend" Form.
-
-Step 7 - Set **Confirmation Message**. This Message will appear when the application has been successfully sent.
-
-####2.8.2 Create a Recruitment post
-Do the below steps to create a recruitment post :
-
-Step 1 - Navigate to **Recruitment > Add New** menu.
-
-Step 2 - Enter the title, description, career job fields and choose or create recruitment category.
-
-![Add Recruitment Post](http://i.imgur.com/xDSEQZt.png)
-
-####2.8.3 Display Recruitment Posts on Page.
-Do the below steps to display Recruitment Posts on Page :
-
-Step 1 - Create/Update a page.
-
-Step 2 - Add **Recruitment Grid** Visual Composer Element to a row.
-
-![Add Recruitment Post](http://i.imgur.com/EbNkPpL.png)
-
-Step 3 - Set **Recruitment Grid** settings.
-
-![Add Recruitment Post](http://i.imgur.com/IJ3ledQ.png)
-
-
-___
-
-###2.9 Add Annual Report
-Billio comes with Billio Report Post plugin. This plugin is used to handle simple annual report information on website.
-
-![Add Annual Report](http://i.imgur.com/Qkpxmqw.png)
-
-####2.9.1 Create a report post
-Do the below steps to create a report post :
-
-Step 1 - Navigate to **Reports > Add New** menu.
-
-Step 2 - Enter the title, description, document options fields, upload featured image and choose or create report category.
-
-![Add Annual Report](http://i.imgur.com/vMPUmBE.png)
-
-
-####2.9.2 Display Report Posts on Page.
-Do the below steps to display Report Posts on Page :
-
-Step 1 - Create/Update a page.
-
-Step 2 - Add **Report List** Visual COmposer Element to a row.
-
-![Add Annual Report](http://i.imgur.com/nhoqFjv.png)
-
-Step 3 - Set **Report List** settings.
-
-![Add Annual Report](http://i.imgur.com/kJbSVFj.png)
-
-___
-
-###2.10 Add Presentation Page
-With Billio you could display Powerpoint Presentation or PDF Document on page.
-
-![Add Presentation Page](http://i.imgur.com/hxnLpK0.png)
-
-Do the below steps to display Presentation on Page :
-
-Step 1 - Create/Update a page.
-
-Step 2 - Add **Document Viewer** Visual COmposer Element to a row.
-
-![Add Presentation Page](http://i.imgur.com/7DGepj6.png)
-
-Step 3 - Set **Document Viewer** settings.
-
-![Add Presentation Page](http://i.imgur.com/YCG7jcN.png)
-
-
-___
-
-###2.11 Replace Highlight Content & Image
-Highlight is custom posts that are displayed on frontend page as boxes with button and background image. See below image :
-![Replace Highlight Content & Image](http://i.imgur.com/NFyqxWT.jpg)
-
-To replace Highlight Content & Image, please do the below steps :
-Step 1 - If you have imported the demo content, you'll find menu **Projects** on Wordpress Admin Area. Visit that menu. 
-
-Step 2 - Edit posts that has **Homepage Higlight** Category.
-
-![Replace Highlight Content & Image](http://i.imgur.com/KG1huOr.png)
-
-Step 3 - Update title, content, and featured image.
-
-![Replace Highlight Content & Image](http://i.imgur.com/lR12GUz.png)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[ DJAVAWEB ] — Native iOS & Digital Solutions / Revision 3.1</title>
+  <meta name="description" content="We design and build digital products, from high-performance websites to production-ready iOS applications.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* ===== FLUID TYPOGRAPHY SYSTEM =====
+     *
+     * Fluid typography: text scales smoothly and continuously between a
+     * MIN and MAX as the viewport changes, using clamp(MIN, PREFERRED, MAX).
+     * The preferred value combines vw (viewport-relative) + rem (zoom-safe),
+     * satisfying WCAG 1.4.4 Resize Text. No breakpoint staircase jumps.
+     *
+     * Formula: slope = (max_px - min_px) / (max_vw - min_vw)
+     *          intercept = min_px - slope * min_vw
+     *          result   = clamp(min_rem, slope*100vw + intercept_rem, max_rem)
+     */
+
+    :root {
+      /* Swiss Industrial Print substrate */
+      --paper:    #F4F4F0;
+      --ink:      #0A0A0A;
+      --ink-soft: #2A2A2A;
+      --ink-mid:  #5A5A5A;
+      --divider:  #D9D9D4;
+      --red:      #E61919;
+      --red-dark: #B31010;
+      --surface:  #ECECE8;
+
+      --font-display: 'Archivo Black', 'Arial Black', sans-serif;
+      --font-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+      /* FLUID VALUES (computed for large desktop):
+       * Hero:      56px@360vw → 320px@2560vw :: 12vw + 0.5rem
+       * Section:   32px@360vw → 128px@2560vw ::  4.36vw + 1rem
+       * Body:      22px@360vw →  52px@2560vw ::  1.36vw + 1.06rem
+       * Stat:      48px@360vw → 192px@2560vw ::  6.55vw + 1.48rem
+       * Mono:      10px@360vw →  15px@2560vw :: 0.23vw + 0.57rem
+       */
+      --fs-hero:    clamp(3.5rem,   12vw   + 0.5rem, 20rem);
+      --fs-section: clamp(2rem,     4.36vw + 1rem,   8rem);
+      --fs-body:    clamp(1.375rem, 1.36vw + 1.06rem, 3.25rem);
+      --fs-stat:    clamp(3rem,     6.55vw + 1.48rem, 12rem);
+      --fs-mono:    clamp(0.625rem, 0.23vw + 0.57rem, 0.94rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { overflow-x: hidden; }
+
+    body {
+      font-family: var(--font-mono);
+      background: var(--paper);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ===== OVERLAYS ===== */
+
+    /* CRT scanlines */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,0,0,0.025) 2px,
+        rgba(0,0,0,0.025) 4px
+      );
+    }
+
+    /* Mechanical noise grain */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 101;
+      pointer-events: none;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    /* ===== GLOBAL RULES ===== */
+
+    /* ALL borders are sharp — ZERO border-radius ever */
+    hr { border: none; height: 1px; background: var(--divider); margin: 0; }
+
+    hr.red {
+      height: 3px;
+      background: var(--red);
+    }
+
+    hr.red-thin {
+      height: 1px;
+      background: var(--red);
+    }
+
+    /* Full-width container — NO max-width limits */
+    .full { width: 100%; }
+
+    /* Grid lines: gap:1px on dark bg creates razor-sharp visible grid */
+    .grid-1px {
+      display: grid;
+      gap: 1px;
+      background: var(--divider);
+    }
+
+    .grid-1px > * {
+      background: var(--paper);
+    }
+
+    .grid-1px-dark {
+      display: grid;
+      gap: 1px;
+      background: var(--ink);
+    }
+
+    .grid-1px-dark > * {
+      background: var(--paper);
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    .display-hero {
+      font-family: var(--font-display);
+      font-size: var(--fs-hero);
+      line-height: 0.88;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .display-section {
+      font-family: var(--font-display);
+      font-size: var(--fs-section);
+      line-height: 0.92;
+      letter-spacing: -0.035em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .display-stat {
+      font-family: var(--font-display);
+      font-size: var(--fs-stat);
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      font-weight: 900;
+    }
+
+    .mono-label {
+      font-family: var(--font-mono);
+      font-size: var(--fs-mono);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .mono-body {
+      font-family: var(--font-mono);
+    }
+
+    .mono-data {
+      font-family: var(--font-mono);
+      font-size: var(--fs-mono);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
+    }
+
+    /* ===== RED ACCENT ELEMENTS ===== */
+    .strike-red {
+      display: inline-block;
+      height: clamp(4px, 0.8vw, 10px);
+      background: var(--red);
+      width: 100%;
+    }
+
+    .border-red { border-color: var(--red) !important; }
+
+    .text-red { color: var(--red); }
+
+    .bg-red { background: var(--red); }
+
+    .bg-ink { background: var(--ink); }
+
+    /* ===== NAV STRIP ===== */
+    .nav-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      border-bottom: 2px solid var(--ink);
+      background: var(--paper);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .nav-strip a {
+      color: var(--ink);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: color 0.15s;
+    }
+
+    .nav-strip a:hover { color: var(--red); }
+
+    .nav-strip .brand {
+      font-family: var(--font-display);
+      font-size: clamp(0.85rem, 0.32vw + 0.65rem, 1.18rem);
+      letter-spacing: -0.02em;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    /* ===== SECTION LAYOUT (full-width, no containers) ===== */
+    .section-block {
+      width: 100%;
+      padding: clamp(2rem, 6vw, 5rem) clamp(1rem, 3vw, 3rem);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .section-block.compact {
+      padding: clamp(1rem, 2vw, 2rem) clamp(1rem, 3vw, 3rem);
+    }
+
+    .section-block.red-bottom {
+      border-bottom: 3px solid var(--red);
+    }
+
+    /* ===== ASCII DECORATORS ===== */
+    .bracket::before { content: '[ '; }
+    .bracket::after  { content: ' ]'; }
+
+    .angle::before { content: '< '; }
+    .angle::after  { content: ' >'; }
+
+    /* ===== CROSSHAIR ===== */
+    .crosshair {
+      position: relative;
+    }
+    .crosshair::before,
+    .crosshair::after {
+      content: '+';
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      color: var(--divider);
+      position: absolute;
+    }
+    .crosshair::before { top: -0.8rem; left: -0.8rem; }
+    .crosshair::after  { bottom: -0.8rem; right: -0.8rem; }
+
+    /* ===== HERO ===== */
+    .hero-zone {
+      width: 100%;
+      padding: clamp(3rem, 8vw, 6rem) clamp(1rem, 3vw, 3rem) clamp(2rem, 4vw, 4rem);
+      position: relative;
+    }
+
+    .hero-actions {
+      position: absolute;
+      right: clamp(1.5rem, 3vw, 3rem);
+      top: clamp(18rem, 33vw, 38rem);
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(1rem, 1.6vw, 1.5rem);
+      width: min(42vw, 560px);
+    }
+
+    .hero-actions-row {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-actions {
+        position: static;
+        width: 100%;
+        margin-top: clamp(1.5rem, 4vw, 2.5rem);
+      }
+    }
+
+    /* ===== CAPABILITY MATRIX ===== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--ink);
+      border-top: 3px solid var(--ink);
+      border-bottom: 3px solid var(--ink);
+    }
+
+    @media (min-width: 980px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .service-cell {
+      position: relative;
+      min-height: clamp(220px, 20vw, 340px);
+      padding: clamp(1.25rem, 2.5vw, 2.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      overflow: hidden;
+      background: var(--paper);
+      isolation: isolate;
+    }
+
+    .service-cell::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(230,25,25,0.08), transparent 34%),
+        repeating-linear-gradient(0deg, transparent, transparent 11px, rgba(10,10,10,0.035) 12px);
+      opacity: 0;
+      transition: opacity 700ms cubic-bezier(0.32,0.72,0,1);
+    }
+
+    .service-cell:nth-child(1),
+    .service-cell:nth-child(4) {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .service-cell:nth-child(1)::before,
+    .service-cell:nth-child(4)::before {
+      background:
+        linear-gradient(135deg, rgba(230,25,25,0.24), transparent 42%),
+        repeating-linear-gradient(0deg, transparent, transparent 11px, rgba(244,244,240,0.055) 12px);
+      opacity: 1;
+    }
+
+    .service-cell:hover::before { opacity: 1; }
+
+    .service-topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .service-index {
+      font-family: var(--font-mono);
+      font-size: var(--fs-mono);
+      letter-spacing: 0.1em;
+      color: var(--red);
+    }
+
+    .service-scope {
+      max-width: 24ch;
+      text-align: right;
+      font-size: clamp(0.58rem, 0.25vw + 0.55rem, 0.72rem);
+    }
+
+    .service-title {
+      font-size: clamp(1.85rem, 4.2vw, 7rem) !important;
+      line-height: 0.9 !important;
+      letter-spacing: -0.055em !important;
+      max-width: 12ch;
+      margin-bottom: 0 !important;
+    }
+
+    .service-cell:nth-child(2) .service-title,
+    .service-cell:nth-child(3) .service-title {
+      max-width: 12ch;
+    }
+
+    .service-copy {
+      max-width: 64ch;
+      line-height: 1.65;
+      text-transform: none;
+      letter-spacing: 0.03em;
+      color: var(--ink-mid);
+    }
+
+    .service-cell:nth-child(1) .service-copy,
+    .service-cell:nth-child(4) .service-copy,
+    .service-cell:nth-child(1) .service-scope,
+    .service-cell:nth-child(4) .service-scope {
+      color: rgba(244,244,240,0.68);
+    }
+
+    .capability-strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      margin-top: 1px;
+      background: var(--divider);
+    }
+
+    @media (min-width: 768px) {
+      .capability-strip { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .capability-strip span {
+      background: var(--paper);
+      padding: clamp(0.85rem, 1.6vw, 1.25rem);
+    }
+
+    /* ===== PRODUCT DEVELOPMENT PROCESS ===== */
+    .process-intro {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(1.25rem, 3vw, 2.5rem);
+      margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+      border-top: 3px solid var(--ink);
+      padding-top: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    @media (min-width: 980px) {
+      .process-intro { grid-template-columns: 0.82fr 1fr; }
+    }
+
+    .process-kicker {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 9.5rem);
+      line-height: 0.86;
+      letter-spacing: -0.055em;
+      text-transform: uppercase;
+      max-width: 9ch;
+    }
+
+    .process-board {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--ink);
+      border-top: 3px solid var(--ink);
+      border-bottom: 3px solid var(--ink);
+    }
+
+    .process-cell {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(1.5rem, 3vw, 2.5rem);
+      min-height: clamp(210px, 18vw, 300px);
+      padding: clamp(1.25rem, 2.5vw, 2.5rem);
+      background: var(--paper);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    @media (min-width: 900px) {
+      .process-cell { grid-template-columns: 0.34fr 1fr 0.9fr; align-items: end; }
+    }
+
+    .process-cell::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(230,25,25,0.1), transparent 30%),
+        repeating-linear-gradient(90deg, transparent, transparent 17px, rgba(10,10,10,0.035) 18px);
+      opacity: 0.7;
+    }
+
+    .process-cell:nth-child(2) {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .process-cell:nth-child(2)::before {
+      background:
+        linear-gradient(135deg, rgba(230,25,25,0.22), transparent 44%),
+        repeating-linear-gradient(90deg, transparent, transparent 17px, rgba(244,244,240,0.05) 18px);
+    }
+
+    .process-index {
+      font-family: var(--font-mono);
+      font-size: var(--fs-mono);
+      letter-spacing: 0.1em;
+      color: var(--red);
+    }
+
+    .process-title {
+      font-size: clamp(2rem, 5.4vw, 8.5rem) !important;
+      line-height: 0.88 !important;
+      letter-spacing: -0.055em !important;
+      max-width: 10ch;
+      margin-bottom: 0 !important;
+    }
+
+    .process-meta {
+      display: block;
+      margin-bottom: 0.85rem;
+      color: var(--red);
+    }
+
+    .process-copy {
+      max-width: 62ch;
+      line-height: 1.65;
+      text-transform: none;
+      letter-spacing: 0.03em;
+      color: var(--ink-mid);
+    }
+
+    .process-cell:nth-child(2) .process-copy {
+      color: rgba(244,244,240,0.68);
+    }
+
+    /* ===== STAT STRIP ===== */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--ink);
+      border-top: 3px solid var(--red);
+      border-bottom: 3px solid var(--red);
+    }
+
+    @media (min-width: 768px) {
+      .stat-strip { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .stat-strip > * {
+      background: var(--paper);
+      text-align: center;
+      padding: clamp(2rem, 4vw, 4rem) 1rem;
+    }
+
+    /* ===== QUOTE BLOCK ===== */
+    .quote-block {
+      width: 100%;
+      line-height: 1.2;
+    }
+
+    /* ===== CTA BAND ===== */
+    .cta-band {
+      width: 100%;
+      background: var(--red);
+      color: var(--paper);
+      text-align: left;
+      padding: clamp(4rem, 9vw, 7rem) clamp(1.5rem, 3vw, 3rem);
+      min-height: clamp(520px, 72vh, 760px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 13vw, 20rem);
+      line-height: 0.82;
+      letter-spacing: -0.065em;
+      text-transform: uppercase;
+      color: #fff;
+      max-width: 9ch;
+      margin-bottom: clamp(1.25rem, 2vw, 2rem);
+    }
+
+    .cta-title span {
+      display: block;
+      color: var(--ink);
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: clamp(12px, 2vw, 18px) clamp(20px, 3vw, 32px);
+      background: var(--paper);
+      color: var(--red);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .cta-btn:hover { background: var(--ink); color: var(--paper); }
+
+    /* ===== FOOTER SPEC SHEET ===== */
+    .footer-spec {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1px;
+      background: var(--divider);
+      font-family: var(--font-mono);
+    }
+
+    @media (min-width: 768px) {
+      .footer-spec { grid-template-columns: 1fr 1fr 1fr 1fr; }
+    }
+
+    .footer-spec > * {
+      background: var(--paper);
+      padding: clamp(1rem, 2vw, 1.5rem);
+    }
+
+    /* ===== HALFTONE IMAGE FILTER ===== */
+    .halftone {
+      filter: contrast(1.4) grayscale(1);
+      mix-blend-mode: multiply;
+      opacity: 0.85;
+    }
+
+    /* ===== REDUCED MOTION ===== */
+    @media (prefers-reduced-motion: reduce) {
+      body::before, body::after { display: none; }
+    }
+
+
+
+    /* ===== REVISION 3.1 SCROLL MOTION SYSTEM ===== */
+    .split-line {
+      display: inline-block;
+      overflow: hidden;
+      padding-bottom: 0.04em;
+      vertical-align: bottom;
+    }
+
+    .split-word {
+      display: inline-block;
+      will-change: transform, opacity;
+    }
+
+    .reveal-block,
+    .reveal-row,
+    .reveal-panel,
+    .reveal-copy {
+      will-change: transform, opacity;
+    }
+
+    .motion-line {
+      transform-origin: left center;
+      will-change: transform;
+    }
+
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 300;
+      width: 100%;
+      height: 3px;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left center;
+      pointer-events: none;
+    }
+
+    .kinetic-mask {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
+
+    .kinetic-mask > span {
+      display: inline-block;
+      will-change: transform;
+    }
+
+    .is-motion-ready .nav-strip {
+      will-change: transform, opacity;
+    }
+
+    /* ===== MOBILE NAV ===== */
+    .nav-links-mobile {
+      display: flex;
+      gap: 12px;
+    }
+
+    @media (max-width: 767px) {
+      .nav-links-desk { display: none; }
+      .mobile-menu-trigger { display: block; }
+    }
+
+    @media (min-width: 768px) {
+      .nav-links-desk { display: flex; gap: 24px; }
+      .mobile-menu-trigger { display: none; }
+    }
+
+    /* ===== OVERLAY MENU ===== */
+    .overlay-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .overlay-menu.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .overlay-menu a {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 4rem);
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: var(--ink);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .overlay-menu a:hover { color: var(--red); }
+
+    .overlay-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      background: none;
+      border: 1px solid var(--ink);
+      padding: 8px 14px;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .overlay-close:hover { background: var(--ink); color: var(--paper); }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--paper); }
+    ::-webkit-scrollbar-thumb { background: var(--ink); }
+  </style>
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ===== OVERLAY MENU ===== -->
+  <div id="overlay" class="overlay-menu">
+    <button onclick="toggleMenu()" class="overlay-close">[ CLOSE ]</button>
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#process" onclick="toggleMenu()">Process</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#works" onclick="toggleMenu()">Works</a>
+    <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+
+  <!-- ===== NAV STRIP ===== -->
+  <nav class="nav-strip">
+    <div>
+      <a href="#" class="brand bracket">DJAVAWEB</a>
+    </div>
+    <div class="nav-links-desk">
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="#testimonials">Testimonials</a>
+    </div>
+    <div>
+      <span class="mono-data nav-links-desk">UNIT / DW-001</span>
+      <button onclick="toggleMenu()" class="mobile-menu-trigger mono-label" style="background:none;border:1px solid var(--ink);padding:6px 12px;cursor:pointer;font-size:0.65rem;">[ MENU ]</button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ZONE ===== -->
+  <section class="hero-zone" data-hero-motion>
+    <!-- Coordinate marker top-left -->
+    <div class="mono-data reveal-copy" style="margin-bottom: clamp(2rem, 5vw, 4rem);">
+      SURABAYA, INDONESIA  ////  WEB &amp; iOS STUDIO  ////  EST. 2018
+    </div>
+
+    <!-- MASSIVE FLUID TYPOGRAPHY -->
+    <h1 class="display-hero js-split-hero" style="margin-bottom: clamp(0.5rem, 1vw, 1rem);">
+      DIGITAL
+    </h1>
+    <div class="display-hero js-split-hero" style="margin-bottom: clamp(0.5rem, 1vw, 1rem); position: relative;">
+      PRODUCTS
+      <!-- Red strike-through block -->
+      <div class="motion-line" style="position: absolute; bottom: 0; left: 0; right: 0; height: clamp(4px, 1vw, 10px); background: var(--red);"></div>
+    </div>
+    <h1 class="display-hero reveal-block" style="margin-bottom: clamp(2rem, 4vw, 3rem);">
+      BUILT TO SOLVE
+      <span style="display: block; color: var(--red);">REAL PROBLEMS</span>
+    </h1>
+
+    <!-- Subtext + CTA in asymmetric grid -->
+    <div class="hero-actions cta-reveal">
+      <div>
+        <p class="mono-body" style="font-size: clamp(0.85rem, 1.1vw, 1.1rem); line-height: 1.6; color: var(--ink-mid); max-width: 48ch;">
+          We design and build digital products, from high-performance websites to production-ready iOS applications.
+        </p>
+      </div>
+      <div class="hero-actions-row">
+        <span class="mono-data text-red">>>>&nbsp;</span>
+        <a href="#contact" class="cta-btn" style="border: 1px solid var(--ink); background: var(--ink); color: var(--paper);">
+          START A PROJECT &nbsp;&rsaquo;
+        </a>
+        <a href="#works" style="font-family:var(--font-mono); font-size:clamp(0.7rem, 1vw, 0.85rem); letter-spacing:0.08em; text-transform:uppercase; color:var(--ink); text-decoration:none; padding: clamp(12px, 2vw, 18px) clamp(16px, 2vw, 24px); border:1px solid var(--divider); font-weight:500;">
+          SEE WORK
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ===== SERVICES: 2x2 Grid with 1px visible lines ===== -->
+  <section id="services" class="section-block">
+    <div style="display:flex; align-items:baseline; gap:12px; margin-bottom: clamp(1.5rem, 3vw, 2.5rem);">
+      <span class="mono-data text-red">////</span>
+      <span class="mono-data">DIVERSE CAPABILITIES</span>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-cell">
+        <div class="service-topline">
+          <span class="service-index">[ 01 ]</span>
+          <span class="mono-data service-scope">WEB / STRATEGY / PERFORMANCE</span>
+        </div>
+        <div>
+          <h3 class="display-section service-title">
+            CORPORATE WEB DEVELOPMENT
+          </h3>
+        </div>
+        <p class="mono-data service-copy">High-performance landing pages and business websites built to clarify positioning, sharpen conversion, and make your offer feel impossible to ignore.</p>
+      </article>
+
+      <article class="service-cell">
+        <div class="service-topline">
+          <span class="service-index">[ 02 ]</span>
+          <span class="mono-data service-scope">SWIFT / SWIFTUI / NATIVE iOS</span>
+        </div>
+        <div>
+          <h3 class="display-section service-title">
+            iOS APP DEVELOPMENT
+          </h3>
+        </div>
+        <p class="mono-data service-copy">Native iOS applications designed around real workflows, stable architecture, fast interaction, and production readiness from the first build.</p>
+      </article>
+
+      <article class="service-cell">
+        <div class="service-topline">
+          <span class="service-index">[ 03 ]</span>
+          <span class="mono-data service-scope">RESEARCH / INTERFACE / SYSTEM</span>
+        </div>
+        <div>
+          <h3 class="display-section service-title">
+            UI/UX SERVICES
+          </h3>
+        </div>
+        <p class="mono-data service-copy">Research-driven interface work that makes the product easier to understand, easier to use, and easier to trust before development begins.</p>
+      </article>
+
+      <article class="service-cell">
+        <div class="service-topline">
+          <span class="service-index">[ 04 ]</span>
+          <span class="mono-data service-scope">HOSTING / CARE / OPERATIONS</span>
+        </div>
+        <div>
+          <h3 class="display-section service-title">
+            WEBSITE HOSTING &amp; MANAGEMENT
+          </h3>
+        </div>
+        <p class="mono-data service-copy">Managed website operations for teams that want fewer technical interruptions, cleaner maintenance, and reliable day-to-day performance.</p>
+      </article>
+    </div>
+
+    <div class="capability-strip">
+      <span class="mono-data">Root-level problem solving</span>
+      <span class="mono-data">Sharper digital product direction</span>
+      <span class="mono-data">Creative systems for sustainable growth</span>
+    </div>
+  </section>
+
+  <hr class="red">
+
+  <!-- ===== PROCESS ===== -->
+  <section id="process" class="section-block">
+    <div style="display:flex; align-items:baseline; gap:12px; margin-bottom: clamp(1.5rem, 3vw, 2.5rem);">
+      <span class="mono-data text-red">////</span>
+      <span class="mono-data">PRODUCT DEVELOPMENT PROCESS</span>
+    </div>
+
+    <div class="process-intro">
+      <h2 class="process-kicker">
+        From problem to shipped product
+      </h2>
+      <p class="mono-data process-copy" style="max-width:72ch;">
+        Every project starts with clarity. We align goals, scope, constraints, and production realities before design begins, so the final website or native iOS application is built with direction instead of guesswork.
+      </p>
+    </div>
+
+    <div class="process-board">
+      <article class="process-cell">
+        <span class="process-index">[ 01 ] DEFINE</span>
+        <h4 class="display-section process-title">DEFINING GOAL</h4>
+        <div>
+          <span class="mono-data process-meta">Project Definition</span>
+          <p class="mono-data process-copy">We isolate the real business problem, target users, core features, technical constraints, and success metrics before anything gets designed.</p>
+        </div>
+      </article>
+
+      <article class="process-cell">
+        <span class="process-index">[ 02 ] STRUCTURE</span>
+        <h4 class="display-section process-title">WIREFRAMING</h4>
+        <div>
+          <span class="mono-data process-meta">Flows / Screens / Architecture</span>
+          <p class="mono-data process-copy">Ideas become structured user flows, screen hierarchy, and interaction patterns that make the product feel understandable before the visual layer is applied.</p>
+        </div>
+      </article>
+
+      <article class="process-cell">
+        <span class="process-index">[ 03 ] SYSTEMIZE</span>
+        <h4 class="display-section process-title">VISUAL DESIGN</h4>
+        <div>
+          <span class="mono-data process-meta">Interface / Brand / Accessibility</span>
+          <p class="mono-data process-copy">We shape the interface system, typography, spacing, and responsive behavior so the product feels polished, native, and ready for implementation.</p>
+        </div>
+      </article>
+
+      <article class="process-cell">
+        <span class="process-index">[ 04 ] BUILD</span>
+        <h4 class="display-section process-title">APP DEVELOPMENT</h4>
+        <div>
+          <span class="mono-data process-meta">Implementation / QA / Release</span>
+          <p class="mono-data process-copy">Development moves into clean architecture, API integration, performance checks, responsive QA, and release preparation for web or App Store delivery.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <hr>
+
+  <!-- ===== ABOUT: Asymmetric split, full-width ===== -->
+  <section id="about" class="section-block" style="display:grid; grid-template-columns:1fr; gap:0;">
+    <!-- Data column (left) -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--divider); margin-bottom:1px;">
+      <div style="background:var(--paper); padding:clamp(1.5rem,3vw,2.5rem);">
+        <span class="mono-data text-red">UNIT / DW-001</span>
+        <div class="display-stat" style="font-size:clamp(2rem, 5vw, 4.5rem); margin-top:0.5rem;">SURABAYA</div>
+        <span class="mono-data">INDONESIA</span>
+      </div>
+      <div style="background:var(--paper); padding:clamp(1.5rem,3vw,2.5rem); display:flex; flex-direction:column; justify-content:flex-end;">
+        <span class="mono-data text-red" style="margin-bottom:0.5rem;">EST.</span>
+        <div class="display-stat" style="font-size:clamp(2rem, 5vw, 4.5rem);">2018</div>
+      </div>
+    </div>
+
+    <!-- Content column (right) -->
+    <div style="padding: clamp(1.5rem, 3vw, 3rem) 0;">
+      <div style="display:flex; align-items:baseline; gap:12px; margin-bottom: clamp(1rem, 2vw, 1.5rem);">
+        <span class="mono-data text-red">////</span>
+        <span class="mono-data">ABOUT THE STUDIO</span>
+      </div>
+
+      <h2 class="display-section js-split-section" style="margin-bottom:clamp(1rem, 2vw, 1.5rem);">
+        AT DJAVAWEB WE'RE ALL ABOUT YOU, SO YOU CAN BE ABOUT YOUR BUSINESS
+      </h2>
+
+      <p class="mono-data" style="text-transform:none; letter-spacing:0.03em; line-height:1.6; max-width:60ch; margin-bottom:1rem;">
+        Located in Surabaya, Indonesia, Djavaweb is a full-service web design agency that provides top-quality services to customers near and far. Since our inception, we've created bold and vibrant websites along with customized solutions for businesses. Now, we'd like to do the same for you.
+      </p>
+
+      <p class="mono-data" style="text-transform:none; letter-spacing:0.03em; line-height:1.6; max-width:60ch;">
+        No matter your business needs, Djavaweb's experienced professionals won't let you down!
+      </p>
+
+      <!-- Values in mini grid -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--divider); margin-top:clamp(1.5rem,3vw,2.5rem);">
+        <div style="background:var(--paper); padding:clamp(1rem,2vw,1.5rem);">
+          <span class="mono-data text-red" style="display:block; margin-bottom:0.5rem;">+ RESEARCH &amp; DISCOVERY</span>
+          <p class="mono-data" style="text-transform:none; letter-spacing:0.03em; font-size:0.65rem;">We help clients understand the space around new products, to find a unique niche and underserved market.</p>
+        </div>
+        <div style="background:var(--paper); padding:clamp(1rem,2vw,1.5rem);">
+          <span class="mono-data text-red" style="display:block; margin-bottom:0.5rem;">+ CREATIVE DIRECTION</span>
+          <p class="mono-data" style="text-transform:none; letter-spacing:0.03em; font-size:0.65rem;">We can help kickstart and drive vision on how customers use and experience your product, and how that product fits into the brand and story of your company.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STAT STRIP: Full-width data band ===== -->
+  <section class="stat-strip" data-stat-motion>
+    <div>
+      <div class="display-stat text-red">$2M+</div>
+      <span class="mono-data" style="display:block; margin-top:0.5rem;">DIGITAL PRODUCTS DELIVERED</span>
+      <span class="mono-data" style="font-size:0.6rem; display:block; margin-top:0.25rem;">web &amp; mobile platforms</span>
+    </div>
+    <div>
+      <div class="display-stat text-red">50+</div>
+      <span class="mono-data" style="display:block; margin-top:0.5rem;">CUSTOMERS WORLDWIDE</span>
+      <span class="mono-data" style="font-size:0.6rem; display:block; margin-top:0.25rem;">digital products &amp; services</span>
+    </div>
+    <div>
+      <div class="display-stat text-red">8+</div>
+      <span class="mono-data" style="display:block; margin-top:0.5rem;">YEARS EXPERIENCE</span>
+      <span class="mono-data" style="font-size:0.6rem; display:block; margin-top:0.25rem;">web &amp; iOS development</span>
+    </div>
+  </section>
+
+  <!-- ===== WORKS: Full-width grid with visible dividers ===== -->
+  <section id="works" class="section-block" data-work-motion>
+    <div style="display:flex; align-items:baseline; gap:12px; margin-bottom: clamp(1.5rem, 3vw, 2.5rem);">
+      <span class="mono-data text-red">////</span>
+      <span class="mono-data">SELECTED WORK</span>
+    </div>
+
+    <h2 class="display-section js-split-section" style="margin-bottom:clamp(1.5rem, 3vw, 2.5rem);">OUR WORKS</h2>
+
+    <!-- Portfolio: 2x2 grid 1px gap -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--divider);">
+      <!-- iOS -->
+      <div style="background:var(--ink); padding:clamp(2rem, 4vw, 3rem); min-height:240px; display:flex; flex-direction:column; justify-content:space-between;">
+        <span class="mono-data" style="color:rgba(255,255,255,0.5);">[ 01 ]</span>
+        <div>
+          <div class="display-section" style="font-size:clamp(1.8rem, 4vw, 4rem); color:var(--paper); line-height:1; margin-bottom:0.5rem;">iOS APP</div>
+          <span class="mono-data" style="color:rgba(255,255,255,0.6);">FinTech Portfolio App</span>
+        </div>
+      </div>
+
+      <!-- Web -->
+      <div style="background:var(--paper); padding:clamp(2rem, 4vw, 3rem); min-height:240px; display:flex; flex-direction:column; justify-content:space-between; border:1px solid var(--divider);">
+        <span class="mono-data" style="color:var(--ink-mid);">[ 02 ]</span>
+        <div>
+          <div class="display-section" style="font-size:clamp(1.8rem, 4vw, 4rem); line-height:1; margin-bottom:0.5rem;">WEB DEV</div>
+          <span class="mono-data">Corporate Landing Page</span>
+        </div>
+      </div>
+
+      <!-- UI/UX -->
+      <div style="background:var(--paper); padding:clamp(2rem, 4vw, 3rem); min-height:240px; display:flex; flex-direction:column; justify-content:space-between; border:1px solid var(--divider);">
+        <span class="mono-data" style="color:var(--ink-mid);">[ 03 ]</span>
+        <div>
+          <div class="display-section" style="font-size:clamp(1.8rem, 4vw, 4rem); line-height:1; margin-bottom:0.5rem;">UI/UX</div>
+          <span class="mono-data">E-Commerce Redesign</span>
+        </div>
+      </div>
+
+      <!-- CMS -->
+      <div style="background:var(--red); padding:clamp(2rem, 4vw, 3rem); min-height:240px; display:flex; flex-direction:column; justify-content:space-between;">
+        <span class="mono-data" style="color:rgba(255,255,255,0.6);">[ 04 ]</span>
+        <div>
+          <div class="display-section" style="font-size:clamp(1.8rem, 4vw, 4rem); color:var(--paper); line-height:1; margin-bottom:0.5rem;">CMS</div>
+          <span class="mono-data" style="color:rgba(255,255,255,0.8);">SaaS Dashboard Platform</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials" class="section-block" style="border-bottom:3px solid var(--red);" data-testimonial-motion>
+    <div style="display:flex; align-items:baseline; gap:12px; margin-bottom: clamp(1.5rem, 3vw, 2.5rem);">
+      <span class="mono-data text-red">////</span>
+      <span class="mono-data">CLIENT VOICES</span>
+    </div>
+
+    <h2 class="display-section js-split-section" style="margin-bottom:clamp(1.5rem, 3vw, 2.5rem);">CUSTOMER REVIEWS</h2>
+
+    <!-- Quotes in a bordered grid -->
+    <div style="display:grid; grid-template-columns:1fr; gap:1px; background:var(--divider);">
+      <div style="background:var(--paper); padding:clamp(1.5rem, 3vw, 2.5rem); display:grid; grid-template-columns:1fr 1fr; gap:1px;">
+        <!-- Quote 1 -->
+        <div style="padding:clamp(1rem, 2vw, 1.5rem);">
+          <div style="font-size:clamp(1.5rem, 2.5vw, 3rem); line-height:1; color:var(--divider); font-family:var(--font-display); margin-bottom:0.5rem;">01</div>
+          <div class="quote-block">
+            <p class="mono-data" style="text-transform:none; letter-spacing:0.03em; line-height:1.5; font-size:0.75rem; margin-bottom:1rem;">
+              "I really love this theme and must say, it is one of the most beautiful ones for promoting digital goods or services in a structured manner! It would definitely deserve way more credits. Thumbs up!"
+            </p>
+            <span class="mono-data" style="display:block;">@michael_grundmann</span>
+            <span class="mono-data text-red" style="font-size:0.6rem;">DESIGN QUALITY</span>
+          </div>
+        </div>
+
+        <!-- Quote 2 -->
+        <div style="padding:clamp(1rem, 2vw, 1.5rem);">
+          <div style="font-size:clamp(1.5rem, 2.5vw, 3rem); line-height:1; color:var(--divider); font-family:var(--font-display); margin-bottom:0.5rem;">02</div>
+          <div class="quote-block">
+            <p class="mono-data" style="text-transform:none; letter-spacing:0.03em; line-height:1.5; font-size:0.75rem; margin-bottom:1rem;">
+              "Fantastic theme, easy to use and well designed! I had a very small issue and deTheme Support was awesome. They were quick to respond and got it resolved!"
+            </p>
+            <span class="mono-data" style="display:block;">@orangepiano88</span>
+            <span class="mono-data text-red" style="font-size:0.6rem;">ITEM QUALITY</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--paper); padding:clamp(1.5rem, 3vw, 2.5rem); display:grid; grid-template-columns:1fr 1fr; gap:1px;">
+        <!-- Quote 3 -->
+        <div style="padding:clamp(1rem, 2vw, 1.5rem);">
+          <div style="font-size:clamp(1.5rem, 2.5vw, 3rem); line-height:1; color:var(--divider); font-family:var(--font-display); margin-bottom:0.5rem;">03</div>
+          <div class="quote-block">
+            <p class="mono-data" style="text-transform:none; letter-spacing:0.03em; line-height:1.5; font-size:0.75rem; margin-bottom:1rem;">
+              "Great theme, easy to work with and beautiful results. Really great customer service, I had a few issues but report was always quick to respond."
+            </p>
+            <span class="mono-data" style="display:block;">@aaacountertops</span>
+            <span class="mono-data text-red" style="font-size:0.6rem;">CUSTOMER SUPPORT</span>
+          </div>
+        </div>
+
+        <!-- Quote 4 -->
+        <div style="padding:clamp(1rem, 2vw, 1.5rem);">
+          <div style="font-size:clamp(1.5rem, 2.5vw, 3rem); line-height:1; color:var(--divider); font-family:var(--font-display); margin-bottom:0.5rem;">04</div>
+          <div class="quote-block">
+            <p class="mono-data" style="text-transform:none; letter-spacing:0.03em; line-height:1.5; font-size:0.75rem; margin-bottom:1rem;">
+              "Amazing Customer support, all my problem was solve and my site is beautiful with this cleanco support team. I cant stop without looking at my website."
+            </p>
+            <span class="mono-data" style="display:block;">@Emailtemplategitex</span>
+            <span class="mono-data text-red" style="font-size:0.6rem;">CUSTOMER SUPPORT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BAND: Full-width red ===== -->
+  <section id="contact" class="cta-band" data-cta-motion>
+    <div style="margin-bottom:clamp(1rem, 2vw, 1.5rem);">
+      <span style="font-family:var(--font-mono); font-size:var(--fs-mono); letter-spacing:0.1em; text-transform:uppercase; opacity:0.78;">>>> INITIATE CONTACT</span>
+    </div>
+
+    <h2 class="cta-title cta-reveal">
+      GOT A PROJECT?
+      <span>LET'S TALK.</span>
+    </h2>
+
+    <a href="#" class="cta-btn cta-reveal">
+      START A CONVERSATION &nbsp;&rsaquo;
+    </a>
+  </section>
+
+  <!-- ===== FOOTER: Specification sheet ===== -->
+  <footer class="footer-spec">
+    <div>
+      <span class="mono-data" style="display:block; margin-bottom:0.25rem; font-weight:700;">[ DJAVAWEB ]</span>
+      <span class="mono-data" style="font-size:0.6rem;">STUDIO / DIGITAL PRODUCTS</span>
+    </div>
+    <div>
+      <span class="mono-data" style="display:block; margin-bottom:0.25rem;">LOCATION</span>
+      <span class="mono-data" style="font-size:0.6rem;">SURABAYA, INDONESIA</span>
+    </div>
+    <div>
+      <span class="mono-data" style="display:block; margin-bottom:0.25rem;">CONTACT</span>
+      <span class="mono-data" style="font-size:0.6rem;">HELLO@DJAVAWEB.COM</span>
+    </div>
+    <div>
+      <span class="mono-data" style="display:block; margin-bottom:0.25rem;">REVISION</span>
+      <span class="mono-data text-red" style="font-size:0.6rem;">3.1 / 2026</span>
+      <span class="mono-data" style="font-size:0.6rem; display:block;">UNIT DW-001</span>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    function toggleMenu() {
+      const overlay = document.getElementById('overlay');
+      overlay.classList.toggle('open');
+      document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+    }
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        const overlay = document.getElementById('overlay');
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    function splitWords(targets) {
+      document.querySelectorAll(targets).forEach((el) => {
+        if (el.dataset.splitReady) return;
+        const text = el.textContent.trim().replace(/\s+/g, ' ');
+        el.setAttribute('aria-label', text);
+        el.innerHTML = text.split(' ').map((word) => (
+          `<span class="split-line" aria-hidden="true"><span class="split-word">${word}</span></span>`
+        )).join(' ');
+        el.dataset.splitReady = 'true';
+      });
+    }
+
+    function initMotion() {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!window.gsap || !window.ScrollTrigger || reduceMotion) return;
+
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.defaults({ ease: 'power3.out', duration: 0.9 });
+      document.body.classList.add('is-motion-ready');
+
+      splitWords('.js-split-hero, .js-split-section');
+
+      gsap.from('.nav-strip', {
+        y: -24,
+        autoAlpha: 0,
+        duration: 0.7,
+        ease: 'power2.out'
+      });
+
+      gsap.to('.scroll-progress', {
+        scaleX: 1,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: document.documentElement,
+          start: 'top top',
+          end: 'bottom bottom',
+          scrub: 0.2
+        }
+      });
+
+      const heroTl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+      heroTl
+        .from('[data-hero-motion] .reveal-copy', { y: 18, autoAlpha: 0, duration: 0.7 })
+        .from('.js-split-hero .split-word', {
+          yPercent: 115,
+          rotation: 2,
+          autoAlpha: 0,
+          duration: 1.1,
+          stagger: { each: 0.055, from: 'start' }
+        }, '-=0.25')
+        .from('[data-hero-motion] .motion-line', { scaleX: 0, duration: 0.9, ease: 'power4.inOut' }, '-=0.7')
+        .from('[data-hero-motion] .reveal-block', { y: 22, autoAlpha: 0, duration: 0.75 }, '-=0.45');
+
+      gsap.utils.toArray('.section-block, .stat-strip, .cta-band').forEach((section) => {
+        const headingWords = section.querySelectorAll('.js-split-section .split-word');
+        if (headingWords.length) {
+          gsap.from(headingWords, {
+            yPercent: 105,
+            autoAlpha: 0,
+            duration: 0.85,
+            stagger: { amount: 0.22, from: 'start' },
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 78%',
+              once: true
+            }
+          });
+        }
+      });
+
+      gsap.utils.toArray('.reveal-panel, .reveal-row, .reveal-block, .quote-block').forEach((el) => {
+        gsap.from(el, {
+          y: 34,
+          autoAlpha: 0,
+          duration: 0.8,
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 86%',
+            once: true
+          }
+        });
+      });
+
+      gsap.from('[data-stat-motion] .display-stat', {
+        yPercent: 24,
+        autoAlpha: 0,
+        duration: 0.9,
+        stagger: 0.12,
+        scrollTrigger: {
+          trigger: '[data-stat-motion]',
+          start: 'top 78%',
+          once: true
+        }
+      });
+
+      gsap.from('[data-work-motion] > div:last-child > div', {
+        y: 42,
+        autoAlpha: 0,
+        duration: 0.85,
+        stagger: { amount: 0.28, from: 'edges' },
+        scrollTrigger: {
+          trigger: '[data-work-motion]',
+          start: 'top 74%',
+          once: true
+        }
+      });
+
+      gsap.from('[data-cta-motion] .cta-reveal', {
+        y: 28,
+        duration: 0.75,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: '[data-cta-motion]',
+          start: 'top 78%',
+          once: true
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', initMotion);
+  </script>
+
+</body>
+</html>
