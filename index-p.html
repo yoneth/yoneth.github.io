@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Pluviometer — An Urbanism & Architecture Journal</title>
+<meta name="description" content="Independent editorial project documenting the slow, accumulated changes in Southeast Asian cities. Long-form reporting, field surveys, archival work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#141414;--bg-2:#1A1A1A;--bg-3:#1E1E1E;--line:#2C2C2C;--line-2:#333;--white:#FFF;--dim:#A8A8A8;--dimmer:#7A7A7A;--faint:#5A5A5A;--gold:#D4A72C;--gold-warm:#E8B83A;--fd:'Oswald','Arial Narrow',sans-serif;--fb:'DM Sans',system-ui,sans-serif;--fs:'Source Serif 4',Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}html,body{background:var(--bg);color:var(--white);font-family:var(--fb);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}a{color:inherit;text-decoration:none}img{display:block;max-width:100%}hr{border:0;height:1px;background:var(--line);width:100%;margin:0}
+.eyebrow{font-family:var(--fb);font-size:.66rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:.6rem}.eyebrow::before{content:'';width:1.8rem;height:1px;background:var(--gold)}
+.top-meta{position:relative;z-index:10;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:14px clamp(1.25rem,2.5vw,2.5rem);border-bottom:1px solid var(--line);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);background:var(--bg)}
+.top-meta .left{justify-self:start;display:flex;gap:1.2rem;align-items:center}.top-meta .right{justify-self:end;display:flex;gap:1.2rem;align-items:center}
+.top-meta .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px rgba(212,167,44,.5)}.top-meta .edition{color:var(--white);font-weight:600}
+@media (max-width:780px){.top-meta .hide-sm{display:none}.top-meta{grid-template-columns:1fr 1fr}}
+.nav-row{position:relative;z-index:9;display:grid;grid-template-columns:1fr 1fr;align-items:start;padding:18px clamp(1.25rem,2.5vw,2.5rem) 14px;border-bottom:1px solid var(--line);background:var(--bg)}
+.brand{display:flex;align-items:center;gap:.6rem;font-family:var(--fd);font-weight:700;font-size:1.1rem;letter-spacing:.12em;text-transform:uppercase;color:var(--white)}
+.brand .beacon{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(212,167,44,.12),0 0 14px rgba(212,167,44,.4)}
+.nav-primary{justify-self:end;display:flex;gap:1.4rem;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim)}
+.nav-primary a{position:relative;padding-bottom:3px;transition:color .15s}.nav-primary a:hover{color:var(--white)}
+.nav-primary a.is-active{color:var(--white)}.nav-primary a.is-active::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--gold)}
+.secondary-nav{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:1.6rem;padding-top:1rem;font-family:var(--fs);font-style:italic;font-size:1.02rem;color:var(--dim);border-top:1px solid var(--line);margin-top:1rem}
+.secondary-nav a{transition:color .15s}.secondary-nav a:hover{color:var(--white)}.secondary-nav .sep{color:var(--faint)}
+@media (max-width:780px){.nav-primary{display:none}.secondary-nav{font-size:.92rem;gap:1.1rem}}
+.hero-split{display:grid;grid-template-columns:1fr;min-height:calc(100vh - 110px)}
+@media (min-width:980px){.hero-split{grid-template-columns:55fr 45fr;min-height:calc(100vh - 130px)}}
+.hero-left{position:relative;padding:clamp(2rem,4vw,3.5rem) clamp(1.5rem,3vw,3rem) clamp(2rem,4vw,3.5rem);display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line);min-height:560px}
+@media (max-width:980px){.hero-left{border-right:0;border-bottom:1px solid var(--line)}}
+.hero-pretitle{font-family:var(--fs);font-style:italic;font-size:clamp(.95rem,1.1vw,1.15rem);color:var(--dim);margin-bottom:1.4rem;max-width:36ch;line-height:1.4}
+.hero-pretitle .marker{color:var(--gold);font-style:normal;font-weight:600;font-family:var(--fb);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;display:inline-block;margin-right:.5rem}
+.hero-headline{font-family:var(--fd);font-weight:700;text-transform:uppercase;color:var(--white);line-height:.88;letter-spacing:-.015em;font-size:clamp(2.6rem,7.4vw,8.2rem);margin-bottom:1.2rem}
+.hero-headline .row{display:block;overflow:hidden}.hero-headline .gold{color:var(--gold)}
+.hero-headline .small{font-size:.42em;letter-spacing:-.01em;line-height:.95;color:var(--white);font-weight:600;margin-top:.4rem;display:block}
+.hero-sub{max-width:52ch;color:var(--dim);font-size:clamp(.92rem,1.05vw,1.05rem);line-height:1.6;margin-bottom:1.6rem}
+.hero-sub strong{color:var(--white);font-weight:600}
+.hero-cta-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;font-family:var(--fb);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;border:1px solid var(--white);background:transparent;color:var(--white);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn-primary{background:var(--gold);border-color:var(--gold);color:#1A1A1A}.btn-primary:hover{background:var(--gold-warm);border-color:var(--gold-warm)}
+.btn-ghost:hover{background:var(--white);color:#000}
+.stats-band-wrap{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats-band{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+@media (min-width:980px){.stats-band{grid-template-columns:repeat(4,1fr)}}
+.stat-cluster{background:var(--bg-3);padding:clamp(1.25rem,2vw,2rem) clamp(1.25rem,2.5vw,2rem);position:relative}
+.stat-cluster .src-info{position:absolute;top:14px;right:14px;width:18px;height:18px;border:1px solid var(--dimmer);border-radius:50%;font-family:var(--fs);font-style:italic;font-size:.7rem;color:var(--dim);display:flex;align-items:center;justify-content:center}
+.stat-cluster .label{font-family:var(--fb);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:.4rem;display:block}
+.stat-cluster .figure{font-family:var(--fd);font-weight:700;font-size:clamp(2.2rem,4.4vw,4.2rem);line-height:.9;letter-spacing:-.02em;color:var(--white);margin-bottom:.5rem}
+.stat-cluster .figure.gold{color:var(--gold)}.stat-cluster .figure .unit{color:var(--dim);font-size:.5em;letter-spacing:.05em;font-weight:500;margin-left:.15em}
+.stat-cluster .desc{font-size:.82rem;color:var(--dim);line-height:1.45;max-width:30ch}
+.hero-right{position:relative;background:#0F0F0F;overflow:hidden;min-height:480px}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.65) contrast(1.02) brightness(.62);opacity:1}
+.hero-photo-tint{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,20,20,.3) 0%,rgba(20,20,20,.4) 60%,rgba(20,20,20,.65) 100%)}
+.hero-photo-tint-bottom{position:absolute;left:0;right:0;bottom:0;height:42%;background:linear-gradient(180deg,transparent 0%,var(--bg) 100%)}
+.hero-photo-caption{position:absolute;left:24px;top:24px;font-family:var(--fb);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.65);z-index:2}
+.hero-photo-caption .accent{color:var(--gold)}
+.hero-photo-meta{position:absolute;left:24px;right:24px;top:64%;z-index:2;display:flex;gap:1rem;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;pointer-events:none}
+.hero-photo-meta > *{pointer-events:auto}
+.hero-legend{background:rgba(20,20,20,.7);border:1px solid var(--line-2);padding:10px 14px;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);backdrop-filter:blur(4px)}
+.hero-legend .item{display:flex;align-items:center;gap:.5rem;padding:.25rem 0}.hero-legend .item:not(:last-child){border-bottom:1px solid var(--line)}
+.hero-legend .swatch{width:8px;height:8px;background:var(--gold);display:inline-block}.hero-legend .swatch.dim{background:var(--dimmer)}
+.hero-carousel{display:flex;gap:.4rem;align-items:center}
+.hero-carousel .count{font-family:var(--fb);font-size:.66rem;letter-spacing:.18em;color:rgba(255,255,255,.7);padding:0 .5rem}
+.hero-carousel .count .now{color:var(--white);font-weight:600}
+.hero-carousel button{width:38px;height:38px;border:1px solid rgba(255,255,255,.4);background:transparent;color:var(--white);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:background .15s,border-color .15s}
+.hero-carousel button:hover{background:var(--white);color:#000;border-color:var(--white)}
+.section{padding:clamp(4rem,8vw,7rem) clamp(1.25rem,2.5vw,2.5rem);max-width:1480px;margin:0 auto}
+.section-head{margin-bottom:clamp(2rem,4vw,3.5rem);display:grid;grid-template-columns:1fr;gap:1rem;align-items:end}
+@media (min-width:900px){.section-head{grid-template-columns:2fr 1fr;gap:3rem}}
+.section-head h2{font-family:var(--fd);font-weight:700;font-size:clamp(2.4rem,5.6vw,6.2rem);line-height:.9;letter-spacing:-.015em;text-transform:uppercase;color:var(--white);max-width:18ch}
+.section-head h2 .gold{color:var(--gold)}
+.section-head .head-aside{font-family:var(--fs);font-style:italic;font-size:1.02rem;color:var(--dim);line-height:1.55;max-width:38ch;justify-self:end}
+@media (max-width:900px){.section-head .head-aside{justify-self:start}}
+.stories-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media (min-width:780px){.stories-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:1100px){.stories-grid{grid-template-columns:1fr 1fr 1fr}}
+.story-card{background:var(--bg-2);display:flex;flex-direction:column;overflow:hidden;transition:background .2s}
+.story-card:hover{background:var(--bg-3)}
+.story-card .image{aspect-ratio:16/10;background:#0F0F0F;position:relative;overflow:hidden}
+.story-card .image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.45) contrast(1.05) brightness(.7);transition:filter .4s,transform .6s}
+.story-card:hover .image img{filter:grayscale(.25) contrast(1.05) brightness(.78);transform:scale(1.03)}
+.story-card .series{position:absolute;top:14px;left:14px;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);background:rgba(20,20,20,.65);padding:5px 10px;z-index:2}
+.story-card .series .dot{display:inline-block;width:6px;height:6px;background:var(--gold);border-radius:50%;margin-right:6px;vertical-align:middle}
+.story-card .body{padding:clamp(1.25rem,2.5vw,2rem);display:flex;flex-direction:column;gap:.9rem;flex:1}
+.story-card .meta{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;gap:1rem;flex-wrap:wrap}
+.story-card .meta .gold{color:var(--gold)}
+.story-card h3{font-family:var(--fd);font-weight:700;font-size:clamp(1.4rem,2vw,1.8rem);line-height:.98;letter-spacing:-.01em;text-transform:uppercase;color:var(--white)}
+.story-card .lede{font-family:var(--fs);font-style:italic;color:var(--dim);font-size:1rem;line-height:1.5}
+.story-card .body-foot{margin-top:auto;padding-top:1rem;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.story-card .byline{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dimmer)}
+.story-card .read-more{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--white);display:inline-flex;align-items:center;gap:.5rem}
+.story-card .read-more::after{content:'→';transition:transform .2s}.story-card:hover .read-more::after{transform:translateX(4px)}
+.stations-section{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stations-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);max-width:1480px;margin:0 auto}
+@media (min-width:780px){.stations-grid{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:1100px){.stations-grid{grid-template-columns:repeat(4,1fr)}}
+.station{background:var(--bg-2);padding:clamp(1.25rem,2vw,1.75rem);position:relative;display:flex;flex-direction:column;gap:.4rem;min-height:170px;transition:background .2s}
+.station:hover{background:var(--bg-3)}
+.station .top-row{display:flex;justify-content:space-between;align-items:flex-start}
+.station .idx{font-family:var(--fb);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dimmer)}
+.station .status{display:inline-flex;align-items:center;gap:.4rem;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.station .status .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}.station .status.idle .dot{background:var(--faint)}
+.station .city{font-family:var(--fd);font-weight:700;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:.95;letter-spacing:-.01em;text-transform:uppercase;color:var(--white);margin-top:.4rem}
+.station .country{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.station .coords{font-family:var(--fb);font-size:.66rem;letter-spacing:.12em;color:var(--dimmer);margin-top:auto;padding-top:.6rem;border-top:1px solid var(--line)}
+.station .reading{display:flex;justify-content:space-between;align-items:baseline;margin-top:.4rem}
+.station .reading .num{font-family:var(--fd);font-weight:600;font-size:1.6rem;color:var(--white);line-height:1;letter-spacing:-.01em}
+.station .reading .num.gold{color:var(--gold)}
+.station .reading .unit{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-left:.3rem}
+.reports-list{border-top:1px solid var(--line)}
+.report-row{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(1rem,2.5vw,2rem);align-items:start;padding:clamp(1.25rem,2.5vw,2rem) 0;border-bottom:1px solid var(--line);transition:background .2s}
+.report-row:hover{background:var(--bg-2)}
+.report-row .num{font-family:var(--fd);font-weight:600;font-size:clamp(1.6rem,2.6vw,2.4rem);color:var(--gold);line-height:1;letter-spacing:-.02em;min-width:1.8em}
+.report-row .body{padding-top:.2rem}
+.report-row .body .meta{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:flex;gap:1.2rem;flex-wrap:wrap;margin-bottom:.6rem}
+.report-row .body .meta .gold{color:var(--gold)}
+.report-row h4{font-family:var(--fd);font-weight:700;font-size:clamp(1.2rem,1.8vw,1.6rem);line-height:1.05;letter-spacing:-.01em;text-transform:uppercase;color:var(--white);margin-bottom:.4rem}
+.report-row .pull{font-family:var(--fs);font-style:italic;font-size:1rem;color:var(--dim);line-height:1.5;max-width:64ch}
+.report-row .tail{text-align:right;padding-top:.4rem;min-width:90px}
+.report-row .tail .read-time{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dimmer);margin-bottom:.4rem;display:block}
+.report-row .tail .arrow{font-size:1.3rem;color:var(--white);transition:transform .2s}.report-row:hover .tail .arrow{transform:translateX(4px)}
+@media (max-width:780px){.report-row{grid-template-columns:auto 1fr}.report-row .tail{grid-column:1/-1;text-align:left;display:flex;gap:1rem;align-items:center}}
+.method-grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3.5rem);align-items:start}
+@media (min-width:980px){.method-grid{grid-template-columns:1.4fr 1fr}}
+.method-prose p{font-family:var(--fs);font-size:clamp(1rem,1.15vw,1.18rem);line-height:1.65;color:var(--dim);margin-bottom:1.1rem}
+.method-prose p strong{color:var(--white);font-weight:600}
+.method-prose p:first-child::first-letter{font-family:var(--fd);font-size:4.6rem;float:left;line-height:.85;color:var(--gold);padding-right:.6rem;padding-top:.2rem;font-weight:700}
+.method-steps{border:1px solid var(--line);background:var(--bg-2)}
+.method-step{padding:clamp(1.1rem,2vw,1.5rem);border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:start}
+.method-step:last-child{border-bottom:0}
+.method-step .n{font-family:var(--fd);font-weight:700;font-size:1.6rem;color:var(--gold);line-height:1;letter-spacing:-.02em}
+.method-step h5{font-family:var(--fd);font-weight:600;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;color:var(--white);margin-bottom:.4rem}
+.method-step p{font-size:.85rem;color:var(--dim);line-height:1.5}
+.about-grid{display:grid;grid-template-columns:1fr;gap:clamp(2rem,4vw,3.5rem);align-items:start}
+@media (min-width:980px){.about-grid{grid-template-columns:1fr 1fr}}
+.about-prose h3{font-family:var(--fd);font-weight:700;font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1.05;letter-spacing:-.01em;text-transform:uppercase;color:var(--white);margin-bottom:1.25rem}
+.about-prose p{font-family:var(--fs);font-size:1.05rem;line-height:1.7;color:var(--dim);margin-bottom:1.1rem}
+.about-prose p strong{color:var(--white);font-weight:600}
+.partners{border:1px solid var(--line);background:var(--bg-2)}
+.partners h4{font-family:var(--fb);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding:clamp(1rem,2vw,1.4rem);border-bottom:1px solid var(--line)}
+.partners .list{padding:clamp(.8rem,1.5vw,1rem) clamp(1rem,2vw,1.4rem)}
+.partners .row{display:flex;justify-content:space-between;align-items:center;padding:.7rem 0;border-bottom:1px solid var(--line);font-size:.82rem}
+.partners .row:last-child{border-bottom:0}
+.partners .row .name{font-family:var(--fd);font-weight:600;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;color:var(--white)}
+.partners .row .meta{color:var(--dim);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
+.funding-note{margin-top:1.5rem;padding:1.1rem;background:var(--bg-2);border-left:3px solid var(--gold);font-size:.82rem;line-height:1.55;color:var(--dim)}
+.funding-note strong{color:var(--white);font-weight:600}
+.cta-band{background:var(--gold);color:#1A1A1A;padding:clamp(3.5rem,7vw,5.5rem) clamp(1.25rem,2.5vw,2.5rem);display:grid;grid-template-columns:1fr;gap:clamp(1.5rem,3vw,2.5rem);align-items:end;position:relative}
+@media (min-width:980px){.cta-band{grid-template-columns:1.4fr 1fr;gap:3rem}}
+.cta-band::before{content:'';position:absolute;left:0;right:0;top:0;height:3px;background:#1A1A1A}
+.cta-band h2{font-family:var(--fd);font-weight:700;font-size:clamp(2.4rem,6vw,6rem);line-height:.92;letter-spacing:-.015em;text-transform:uppercase;color:#1A1A1A;max-width:14ch}
+.cta-band h2 .invert{color:var(--white);display:block}
+.cta-band p{font-family:var(--fs);font-size:1.05rem;line-height:1.6;max-width:42ch;color:rgba(26,26,26,.85);margin-bottom:1rem}
+.signup-form{display:flex;gap:0;border:1px solid #1A1A1A;background:#1A1A1A}
+.signup-form input{flex:1;background:transparent;border:0;outline:0;padding:14px 16px;font-family:var(--fb);font-size:.85rem;color:var(--white)}
+.signup-form input::placeholder{color:var(--dim)}
+.signup-form button{background:var(--white);color:#1A1A1A;border:0;padding:14px 22px;font-family:var(--fb);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;cursor:pointer;transition:background .15s}
+.signup-form button:hover{background:var(--gold)}
+.signup-meta{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(26,26,26,.7);margin-top:1rem;display:flex;gap:1.2rem;flex-wrap:wrap}
+footer{background:var(--bg-2);border-top:1px solid var(--line)}
+.footer-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);max-width:1480px;margin:0 auto}
+@media (min-width:780px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr 1fr 1fr}}
+.footer-grid > *{background:var(--bg-2);padding:clamp(1.5rem,2.5vw,2.2rem)}
+.footer-brand{font-family:var(--fd);font-weight:700;font-size:1.6rem;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem}
+.footer-brand .beacon{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(212,167,44,.12)}
+.footer-tag{font-family:var(--fs);font-style:italic;color:var(--dim);font-size:.92rem;line-height:1.5;max-width:36ch;margin-bottom:1.2rem}
+.footer-spec h5{font-family:var(--fb);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.footer-spec a{display:block;font-family:var(--fb);font-size:.78rem;color:var(--white);margin-bottom:.5rem;transition:color .15s}
+.footer-spec a:hover{color:var(--gold)}
+.footer-meta{padding:1.2rem clamp(1.25rem,2.5vw,2.5rem);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dimmer);border-top:1px solid var(--line);max-width:1480px;margin:0 auto}
+@media (prefers-reduced-motion:reduce){.story-card .image img,.stat-cluster,.report-row .tail .arrow{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="top-meta">
+  <div class="left">
+    <span><span class="dot"></span>&nbsp;<span class="edition">ED. 04</span>&nbsp;PUBLISHED</span>
+    <span class="hide-sm">·</span>
+    <span class="hide-sm">ISSN 2960-1147</span>
+  </div>
+  <div>PLUVIOMETER &mdash; QUARTERLY</div>
+  <div class="right">
+    <span class="hide-sm">JUN 2026</span>
+    <span class="hide-sm">·</span>
+    <span>ISSN OPEN</span>
+  </div>
+</div>
+
+<header class="nav-row">
+  <a href="#" class="brand"><span class="beacon"></span>Pluviometer</a>
+  <nav class="nav-primary">
+    <a href="#" class="is-active">Home</a>
+    <a href="#about">About</a>
+    <a href="#journal">Journal</a>
+    <a href="#stations">Field Notes</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="secondary-nav">
+    <a href="#stories" class="is-active">Heritage Loss</a><span class="sep">/</span>
+    <a href="#stories">Public Space</a><span class="sep">/</span>
+    <a href="#stories">Vertical Urbanism</a><span class="sep">/</span>
+    <a href="#stories">Informal Settlements</a><span class="sep">/</span>
+    <a href="#stories">Preservation Law</a>
+  </div>
+</header>
+<section class="hero-split">
+  <div class="hero-left">
+    <p class="hero-pretitle"><span class="marker">The 2026 Annual &middot;</span> An independent observatory measuring the slow accumulation of change in our cities.</p>
+    <h1 class="hero-headline">
+      <span class="row"><span class="gold">47%</span></span>
+      <span class="row">of pre-1990</span>
+      <span class="row">structures</span>
+      <span class="row">in surveyed districts</span>
+      <span class="small">DEMOLISHED SINCE 2015 &mdash; SOUTH &amp; SOUTHEAST ASIA</span>
+    </h1>
+    <p class="hero-sub">Across <strong>14 cities</strong> and <strong>2,180 surveyed blocks</strong>, we have documented the quiet disappearance of <strong>post-colonial low-rise fabric</strong> &mdash; replaced not by crisis but by code, by capital, by routine.</p>
+    <div class="hero-cta-row">
+      <a href="#journal" class="btn btn-primary">&gt;&gt;&gt; READ THE 2026 ANNUAL</a>
+      <a href="#method" class="btn btn-ghost">VIEW METHODOLOGY</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img class="hero-photo" src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1600&q=80" alt="Documentary photograph of weathered urban facade" loading="eager">
+    <div class="hero-photo-tint"></div>
+    <div class="hero-photo-tint-bottom"></div>
+    <div class="hero-photo-caption"><span class="accent">/</span>&nbsp;&nbsp;Figure 01 &mdash; Weathered facade, field documentation. 2024 / 2025.</div>
+    <div class="hero-photo-meta">
+      <div class="hero-legend">
+        <div class="item"><span class="swatch"></span>PRE-1990</div>
+        <div class="item"><span class="swatch dim"></span>POST-1990</div>
+        <div class="item"><span class="swatch" style="background:#1A1A1A;border:1px solid var(--gold)"></span>DEMOLISHED</div>
+      </div>
+      <div class="hero-carousel">
+        <button aria-label="previous">&larr;</button>
+        <button aria-label="next">&rarr;</button>
+        <span class="count"><span class="now">01</span>&nbsp;/&nbsp;04</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-band-wrap">
+  <div class="stats-band">
+    <div class="stat-cluster">
+      <span class="src-info" title="Source: PLV 2026 dataset">i</span>
+      <span class="label">DISTRICTS SURVEYED</span>
+      <div class="figure">14</div>
+      <p class="desc">Across 7 metros, three rounds since 2019.</p>
+    </div>
+    <div class="stat-cluster">
+      <span class="src-info" title="Source: PLV 2026 dataset">i</span>
+      <span class="label">LOSS BY DEMOLITION</span>
+      <div class="figure gold">47<span class="unit">%</span></div>
+      <p class="desc">Pre-1990 structures absent from 2025 satellite rasters.</p>
+    </div>
+    <div class="stat-cluster">
+      <span class="src-info" title="Source: PLV 2026 dataset">i</span>
+      <span class="label">REPORTING RUNNING</span>
+      <div class="figure">7<span class="unit">YRS</span></div>
+      <p class="desc">Independent of state or developer funding.</p>
+    </div>
+    <div class="stat-cluster">
+      <span class="src-info" title="Source: PLV 2026 dataset">i</span>
+      <span class="label">FIELD STATIONS</span>
+      <div class="figure">7</div>
+      <p class="desc">Jakarta, Surabaya, Bandung, Yogyakarta, Medan, Semarang, Makassar.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="stories">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Data Stories &middot; 03</div>
+      <h2 style="margin-top:1rem">THE LONG <span class="gold">TAIL</span><br>OF DEMOLITION</h2>
+    </div>
+    <p class="head-aside">Three field studies, all published in 2025&ndash;2026, all peer-reviewed by our editorial board. Free to read, no paywall, no sponsored framing.</p>
+  </div>
+  <div class="stories-grid">
+    <article class="story-card">
+      <div class="image">
+        <span class="series"><span class="dot"></span>SERIES 01 / HERITAGE</span>
+        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80" alt="Old shophouse facade in urban Asian setting">
+      </div>
+      <div class="body">
+        <div class="meta"><span class="gold">FIELD STUDY</span><span>12 MIN READ</span><span>JAKARTA</span></div>
+        <h3>WHEN THE SHOPS GO QUIET</h3>
+        <p class="lede">A four-year survey of 1,200 pre-war shophouses in Glodok and Petak Sembilan, and the slow arithmetic of their replacement by glass, branded concrete, and parking.</p>
+        <div class="body-foot">
+          <span class="byline">By R. HALIM &middot; LIM, A.</span>
+          <a href="#" class="read-more">Read the study</a>
+        </div>
+      </div>
+    </article>
+    <article class="story-card">
+      <div class="image">
+        <span class="series"><span class="dot"></span>SERIES 02 / PUBLIC SPACE</span>
+        <img src="https://images.unsplash.com/photo-1518398046578-8cca57782e17?w=1200&q=80" alt="Public plaza at dusk in tropical Southeast Asian city">
+      </div>
+      <div class="body">
+        <div class="meta"><span class="gold">FIELD STUDY</span><span>09 MIN READ</span><span>SURABAYA</span></div>
+        <h3>PLAZAS THAT NEVER WERE</h3>
+        <p class="lede">Eight proposed public plazas in the 2018 RTRW. As of mid-2026, three exist on paper only, two are privately managed, and three are malls with atriums.</p>
+        <div class="body-foot">
+          <span class="byline">By M. WIJAYA</span>
+          <a href="#" class="read-more">Read the study</a>
+        </div>
+      </div>
+    </article>
+    <article class="story-card">
+      <div class="image">
+        <span class="series"><span class="dot"></span>SERIES 03 / VERTICAL</span>
+        <img src="https://images.unsplash.com/photo-1496564203457-11bb12075d90?w=1200&q=80" alt="High-rise vertical urbanism">
+      </div>
+      <div class="body">
+        <div class="meta"><span class="gold">FIELD STUDY</span><span>14 MIN READ</span><span>JABODETABEK</span></div>
+        <h3>THE 40-STOREY QUESTION</h3>
+        <p class="lede">Vertical urbanism is the official policy. The data, drawn from 412 buildings completed between 2015&ndash;2025, asks who it actually serves &mdash; and at what ground-plane cost.</p>
+        <div class="body-foot">
+          <span class="byline">By N. KURNIAWAN &middot; SANTOSO, P.</span>
+          <a href="#" class="read-more">Read the study</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="stations-section" id="stations">
+  <div class="section">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Field Stations &middot; 07</div>
+        <h2 style="margin-top:1rem">WHERE WE <span class="gold">MEASURE</span></h2>
+      </div>
+      <p class="head-aside">Each station runs a continuous low-rise survey plus quarterly satellite reconciliation. Readings below are the most recent.</p>
+    </div>
+  </div>
+  <div class="stations-grid">
+    <article class="station">
+      <div class="top-row"><span class="idx">STN 01</span><span class="status"><span class="dot"></span>ACTIVE</span></div>
+      <div class="city">Jakarta</div><div class="country">ID &middot; GLODOK / PETAK</div>
+      <div class="reading"><span class="num">−18.4<span class="unit">%</span></span><span class="unit">PRE-1990 LOSS</span></div>
+      <div class="coords">LAT −6.1644 &middot; LON 106.8147</div>
+    </article>
+    <article class="station">
+      <div class="top-row"><span class="idx">STN 02</span><span class="status"><span class="dot"></span>ACTIVE</span></div>
+      <div class="city">Surabaya</div><div class="country">ID &middot; KETABANG / KAPASAN</div>
+      <div class="reading"><span class="num">−12.1<span class="unit">%</span></span><span class="unit">PRE-1990 LOSS</span></div>
+      <div class="coords">LAT −7.2456 &middot; LON 112.7378</div>
+    </article>
+    <article class="station">
+      <div class="top-row"><span class="idx">STN 03</span><span class="status"><span class="dot"></span>ACTIVE</span></div>
+      <div class="city">Bandung</div><div class="country">ID &middot; BRAGA / KEBON JATI</div>
+      <div class="reading"><span class="num">−9.7<span class="unit">%</span></span><span class="unit">PRE-1990 LOSS</span></div>
+      <div class="coords">LAT −6.9175 &middot; LON 107.6191</div>
+    </article>
+    <article class="station">
+      <div class="top-row"><span class="idx">STN 04</span><span class="status"><span class="dot"></span>ACTIVE</span></div>
+      <div class="city">Yogyakarta</div><div class="country">ID &middot; PANEMBAHAN / GEDONGKUNING</div>
+      <div class="reading"><span class="num gold">−4.2<span class="unit">%</span></span><span class="unit">PRE-1990 LOSS</span></div>
+      <div class="coords">LAT −7.7956 &middot; LON 110.3695</div>
+    </article>
+    <article class="station">
+      <div class="top-row"><span class="idx">STN 05</span><span class="status"><span class="dot"></span>ACTIVE</span></div>
+      <div class="city">Medan</div><div class="country">ID &middot; KESAWAN / MADRAS</div>
+      <div class="reading"><span class="num">−14.8<span class="unit">%</span></span><span class="unit">PRE-1990 LOSS</span></div>
+      <div class="coords">LAT 3.5952 &middot; LON 98.6722</div>
+    </article>
+    <article class="station">
+      <div class="top-row"><span class="idx">STN 06</span><span class="status idle"><span class="dot"></span>RESTART Q3</span></div>
+      <div class="city">Semarang</div><div class="country">ID &middot; KOTA LAMA</div>
+      <div class="reading"><span class="num">−7.1<span class="unit">%</span></span><span class="unit">PRE-1990 LOSS</span></div>
+      <div class="coords">LAT −6.9667 &middot; LON 110.4167</div>
+    </article>
+    <article class="station">
+      <div class="top-row"><span class="idx">STN 07</span><span class="status"><span class="dot"></span>ACTIVE</span></div>
+      <div class="city">Makassar</div><div class="country">ID &middot; LOSARI / BULOA</div>
+      <div class="reading"><span class="num">−6.4<span class="unit">%</span></span><span class="unit">PRE-1990 LOSS</span></div>
+      <div class="coords">LAT −5.1477 &middot; LON 119.4327</div>
+    </article>
+    <article class="station" style="background:var(--bg-3)">
+      <div class="top-row"><span class="idx">STN 08</span><span class="status idle"><span class="dot"></span>OPEN</span></div>
+      <div class="city" style="color:var(--dim)">Next City</div><div class="country">FIELD PROPOSAL OPEN</div>
+      <div class="reading" style="margin-top:1rem"><span class="num" style="color:var(--dim)">—</span><span class="unit">PROPOSE A STATION</span></div>
+      <div class="coords">EDITORIAL@PLUVIOMETER.ID</div>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="journal">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Long-Form &middot; Recent Reports</div>
+      <h2 style="margin-top:1rem">THE <span class="gold">JOURNAL</span></h2>
+    </div>
+    <p class="head-aside">Long-form editorial from our field researchers. Updated quarterly. All reports are open-access; methodology appendices are linked in each entry.</p>
+  </div>
+  <div class="reports-list">
+    <a href="#" class="report-row">
+      <span class="num">01</span>
+      <div class="body">
+        <div class="meta"><span class="gold">REPORT</span><span>14 MAR 2026</span><span>FIELD STUDY</span><span>PEER REVIEWED</span></div>
+        <h4>WHEN THE SHOPS GO QUIET: A FOUR-YEAR SURVEY OF GLODOK</h4>
+        <p class="pull">"The loss is not a single event. It is a sequence of small administrative decisions, each defensible on its own, that compound into a city we no longer recognise."</p>
+      </div>
+      <div class="tail"><span class="read-time">12 MIN</span><span class="arrow">&rarr;</span></div>
+    </a>
+    <a href="#" class="report-row">
+      <span class="num">02</span>
+      <div class="body">
+        <div class="meta"><span class="gold">REPORT</span><span>02 FEB 2026</span><span>POLICY NOTE</span><span>OPEN DATA</span></div>
+        <h4>PLAZAS THAT NEVER WERE: PUBLIC SPACE AND THE 2018 RTRW</h4>
+        <p class="pull">"A city that promises public space on paper but delivers private atriums is not under-fulfilling a plan. It is the plan."</p>
+      </div>
+      <div class="tail"><span class="read-time">9 MIN</span><span class="arrow">&rarr;</span></div>
+    </a>
+    <a href="#" class="report-row">
+      <span class="num">03</span>
+      <div class="body">
+        <div class="meta"><span class="gold">REPORT</span><span>18 DEC 2025</span><span>FIELD STUDY</span><span>PEER REVIEWED</span></div>
+        <h4>THE 40-STOREY QUESTION: VERTICAL URBANISM, GROUND-PLANE COST</h4>
+        <p class="pull">"Towers are often discussed in the air. Our data is collected at eye level, on the sidewalk, where vertical urbanism lands hardest."</p>
+      </div>
+      <div class="tail"><span class="read-time">14 MIN</span><span class="arrow">&rarr;</span></div>
+    </a>
+    <a href="#" class="report-row">
+      <span class="num">04</span>
+      <div class="body">
+        <div class="meta"><span>COMMENTARY</span><span>04 NOV 2025</span><span>EDITORIAL</span></div>
+        <h4>PRESERVATION LAW IS NOT ENOUGH &mdash; AND IT NEVER WAS</h4>
+        <p class="pull">"The 2010 Heritage Law was a triumph. A decade on, we count what it could not protect: the buildings whose significance was not yet recognised, and may never be."</p>
+      </div>
+      <div class="tail"><span class="read-time">7 MIN</span><span class="arrow">&rarr;</span></div>
+    </a>
+    <a href="#" class="report-row">
+      <span class="num">05</span>
+      <div class="body">
+        <div class="meta"><span>DATA NOTE</span><span>22 SEP 2025</span><span>APPENDIX A</span></div>
+        <h4>SATELLITE RECONCILIATION METHODOLOGY, 2025 EDITION</h4>
+        <p class="pull">"An honest method must publish its error bars. The version of our model that fits the data worst is the version that helps us notice what we are missing."</p>
+      </div>
+      <div class="tail"><span class="read-time">18 MIN</span><span class="arrow">&rarr;</span></div>
+    </a>
+  </div>
+</section>
+
+<section class="section" id="method">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">Methodology &middot; 2025 ED.</div>
+      <h2 style="margin-top:1rem">HOW WE <span class="gold">MEASURE</span></h2>
+    </div>
+    <p class="head-aside">A working paper, not a press release. We publish our method before we publish our results.</p>
+  </div>
+  <div class="method-grid">
+    <div class="method-prose">
+      <p>Pluviometer is built on a deliberately simple premise: <strong>cities change slowly, and the changes that matter most happen below the threshold of news</strong>. We measure what disappears one building at a time, in the ordinary course of code compliance and capital flows, because that is where most of the loss actually occurs.</p>
+      <p>Our field stations operate on a continuous low-rise survey, augmented quarterly by satellite reconciliation. We do not use computer-vision inference for the record counts &mdash; every demolition is verified against a 2015 baseline raster, a 2020 raster, and a 2025 raster, by a human reviewer. This costs us speed; it buys us the right to publish a number that is harder to dispute.</p>
+      <p>We make no claims of completeness. <strong>The 47% figure is for the 14 surveyed districts, not the region</strong>. The regional picture is almost certainly less alarming in some metros and more alarming in others. We will publish city-by-city results before the end of 2026.</p>
+      <p>Our funding is partial grants, individual reader support, and one anonymous endowment &mdash; disclosed in full below. We accept no funding from state heritage bodies, developers, or firms in the construction supply chain.</p>
+    </div>
+    <aside class="method-steps">
+      <div class="method-step"><span class="n">01</span><div><h5>BASELINE RASTER</h5><p>Pre-1990 building footprint set, hand-corrected from historical cadastral records. Published openly.</p></div></div>
+      <div class="method-step"><span class="n">02</span><div><h5>CONTINUOUS FIELD SURVEY</h5><p>Local researchers walk the surveyed district monthly. Each closure, demolition, or adaptive reuse is logged with photos and metadata.</p></div></div>
+      <div class="method-step"><span class="n">03</span><div><h5>QUARTERLY SATELLITE</h5><p>Sub-meter satellite rasters are reconciled with field data. Discrepancies above 5% are re-walked.</p></div></div>
+      <div class="method-step"><span class="n">04</span><div><h5>PEER REVIEW</h5><p>Each report passes through three reviewers: a regional urbanist, a methodologist, and a local practitioner.</p></div></div>
+      <div class="method-step"><span class="n">05</span><div><h5>OPEN PUBLICATION</h5><p>Reports, data, and appendices are released under CC-BY-SA. No embargo, no redaction, no paywall.</p></div></div>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="section-head">
+    <div>
+      <div class="eyebrow">About &middot; The Editorial Project</div>
+      <h2 style="margin-top:1rem">A <span class="gold">JOURNAL</span>, NOT<br>A CAMPAIGN</h2>
+    </div>
+    <p class="head-aside">Pluviometer publishes observations. We do not petition, litigate, or petition governments directly. We believe accurate measurement is itself an act of urban care.</p>
+  </div>
+  <div class="about-grid">
+    <div class="about-prose">
+      <h3>WHY A RAIN GAUGE<br>FOR CITIES?</h3>
+      <p>A rain gauge does not change the weather. It records the slow, accumulated, often-invisible shifts that, over time, become a flood. <strong>Cities change the same way</strong>: one building at a time, in the ordinary course of administration, rarely dramatic, almost never news.</p>
+      <p>Pluviometer is named for the device that measures what is not yet a crisis. We were founded in 2019 by a small group of urbanists, photographers, and data practitioners in Surabaya, working from the assumption that the most important work in any city is the work that prevents quiet loss from becoming total loss.</p>
+      <p>We are deliberately not a campaign, an NGO, or a think tank. <strong>We are a journal</strong> &mdash; an editorial project with a continuous survey practice. We publish. We wait. We re-measure. The discipline is the work.</p>
+      <div class="funding-note">
+        <strong>Funding disclosure (FY 2025):</strong> 62% reader-supported subscriptions &middot; 21% partial research grants (Packard Urban Futures, Jakarta) &middot; 12% anonymous endowment &middot; 5% honoraria and speaking. No state, no developer, no construction-supply-chain funding.
+      </div>
+    </div>
+    <aside class="partners">
+      <h4>Editorial &amp; Research Network</h4>
+      <div class="list">
+        <div class="row"><span class="name">Surabaya Built Collective</span><span class="meta">HOST / ID</span></div>
+        <div class="row"><span class="name">Packard Urban Futures</span><span class="meta">METHODOLOGY / US</span></div>
+        <div class="row"><span class="name">ITB School of Architecture</span><span class="meta">PEER REVIEW / ID</span></div>
+        <div class="row"><span class="name">NUS Asia Urban Lab</span><span class="meta">DATA PARTNER / SG</span></div>
+        <div class="row"><span class="name">TU Delft Heritage Lab</span><span class="meta">METHOD ADVISOR / NL</span></div>
+        <div class="row"><span class="name">Komunitas Foto Jalanan</span><span class="meta">FIELD IMAGES / ID</span></div>
+        <div class="row"><span class="name">Aksi! for Public Space</span><span class="meta">EDITORIAL / ID</span></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="cta-band" id="contact">
+  <div>
+    <div class="eyebrow" style="color:#1A1A1A;margin-bottom:1rem">/// Join the Quarterly &middot; Free</div>
+    <h2>MEASURE<br>WITH <span class="invert">US</span></h2>
+  </div>
+  <div>
+    <p>The Quarterly lands in your inbox four times a year. One long-form report, one data note, one field photograph, and the methodology appendix. No marketing.</p>
+    <form class="signup-form" onsubmit="event.preventDefault();this.querySelector('button').textContent='SUBSCRIBED';">
+      <input type="email" placeholder="email@institution.org" required>
+      <button type="submit">SUBSCRIBE</button>
+    </form>
+    <div class="signup-meta">
+      <span>4 / YEAR</span><span>&middot;</span>
+      <span>UNSUBSCRIBE ANY TIME</span><span>&middot;</span>
+      <span>NO TRACKING</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span class="beacon"></span>Pluviometer</div>
+      <p class="footer-tag">An independent urbanism &amp; architecture journal. Measuring the slow, accumulated changes in Southeast Asian cities since 2019.</p>
+      <div style="font-family:var(--fb);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)">Editorial: editorial@pluviometer.id</div>
+    </div>
+    <div class="footer-spec">
+      <h5>JOURNAL</h5>
+      <a href="#journal">Reports</a>
+      <a href="#journal">Field Studies</a>
+      <a href="#journal">Data Notes</a>
+      <a href="#journal">Editorials</a>
+    </div>
+    <div class="footer-spec">
+      <h5>PRACTICE</h5>
+      <a href="#method">Methodology</a>
+      <a href="#stations">Field Stations</a>
+      <a href="#about">Funding</a>
+      <a href="#about">Reviewers</a>
+    </div>
+    <div class="footer-spec">
+      <h5>OPEN</h5>
+      <a href="#">Dataset (CSV)</a>
+      <a href="#">Satellite rasters</a>
+      <a href="#">Cadastral layer</a>
+      <a href="#">API (read-only)</a>
+    </div>
+    <div class="footer-spec">
+      <h5>CONTACT</h5>
+      <a href="mailto:editorial@pluviometer.id">editorial@pluviometer.id</a>
+      <a href="mailto:press@pluviometer.id">press@pluviometer.id</a>
+      <a href="mailto:submit@pluviometer.id">submit@pluviometer.id</a>
+      <a href="#">RSS</a>
+    </div>
+  </div>
+  <div class="footer-meta">
+    <div>&copy; 2019&ndash;2026 PLUVIOMETER &middot; ISSN 2960-1147 &middot; CC-BY-SA 4.0</div>
+    <div>OPERATED FROM SURABAYA, ID &middot; GMT +7</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var rows=document.querySelectorAll('.hero-headline .row');
+  rows.forEach(function(r,i){
+    r.style.opacity=0;
+    r.style.transform='translateY(100%)';
+    r.style.transition='transform 1s cubic-bezier(.2,.7,.2,1), opacity .8s ease';
+    setTimeout(function(){
+      r.style.opacity=1;
+      r.style.transform='translateY(0)';
+    }, 80 + i*120);
+  });
+
+  if(!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.stat-cluster .figure, .story-card, .station, .report-row, .method-step, .partners .row')
+      .forEach(function(el){ el.style.opacity=1; el.style.transform='none'; });
+    return;
+  }
+
+  var revealEls=document.querySelectorAll('.stat-cluster .figure, .story-card, .station, .report-row, .method-step, .partners .row');
+  var ro=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target;
+      el.style.transition='transform .8s cubic-bezier(.2,.7,.2,1), opacity .8s ease, background .2s';
+      el.style.transform='translateY(0)';
+      el.style.opacity=1;
+      ro.unobserve(el);
+    });
+  },{threshold:.1, rootMargin:'0px 0px -5% 0px'});
+  revealEls.forEach(function(el){
+    el.style.opacity=0;
+    el.style.transform='translateY(22px)';
+    ro.observe(el);
+  });
+})();
+</script>
+</body>
+</html>
